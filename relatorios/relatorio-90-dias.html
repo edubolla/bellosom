@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Google Ads — Bellosom | 90 dias</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --success: #057a55;
+    --danger: #c81e1e;
+    --warning: #c27803;
+    --neutral: #374151;
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 32px 16px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; color: var(--neutral); }
+  .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 8px; }
+  .kpi { background: var(--bg); border-radius: 8px; padding: 16px; text-align: center; }
+  .kpi-value { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .kpi-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+  .kpi.green .kpi-value { color: var(--success); }
+  .kpi.red .kpi-value { color: var(--danger); }
+  .kpi.orange .kpi-value { color: var(--warning); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  thead th { background: var(--bg); font-weight: 600; text-align: left; padding: 8px 12px; border-bottom: 2px solid var(--border); white-space: nowrap; }
+  tbody td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f3f4f6; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 0.72rem; font-weight: 600; }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-yellow { background: #fef3c7; color: #92400e; }
+  .badge-gray { background: #f3f4f6; color: #374151; }
+  .tag-broad { background: #ede9fe; color: #5b21b6; }
+  .tag-phrase { background: #dbeafe; color: #1e40af; }
+  .tag-exact { background: #d1fae5; color: #065f46; }
+  .insight { border-left: 4px solid; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 12px; font-size: 0.9rem; }
+  .insight-success { border-color: var(--success); background: #ecfdf5; }
+  .insight-danger { border-color: var(--danger); background: #fef2f2; }
+  .insight-warning { border-color: var(--warning); background: #fffbeb; }
+  .insight-info { border-color: var(--primary); background: #eff6ff; }
+  .insight strong { display: block; margin-bottom: 2px; }
+  /* CHECKLIST */
+  .checklist { list-style: none; }
+  .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; }
+  .checklist li:hover { background: #f9fafb; }
+  .checklist li.done { background: #f9fafb; }
+  .checklist li.done .item-body { text-decoration: line-through; color: var(--muted); }
+  .checklist input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; cursor: pointer; accent-color: var(--success); }
+  .item-body { flex: 1; }
+  .item-title { font-weight: 600; font-size: 0.93rem; }
+  .item-desc { font-size: 0.83rem; color: var(--muted); margin-top: 2px; }
+  .priority { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 7px; border-radius: 99px; flex-shrink: 0; margin-top: 3px; }
+  .p-alta { background: #fee2e2; color: #991b1b; }
+  .p-media { background: #fef3c7; color: #92400e; }
+  .p-baixa { background: #d1fae5; color: #065f46; }
+  .checklist-group { margin-bottom: 24px; }
+  .checklist-group h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 10px; }
+  .bar { background: #e5e7eb; border-radius: 4px; height: 8px; width: 100%; }
+  .bar-fill { background: var(--primary); height: 8px; border-radius: 4px; }
+  .bar-fill.green { background: var(--success); }
+  .bar-fill.red { background: var(--danger); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+  .alert-banner { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 0.9rem; color: #78350f; }
+  .alert-banner strong { color: #92400e; }
+  footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Relatório de Performance — Bellosom Aparelhos Auditivos</h1>
+  <p class="subtitle">Google Ads · Período: 03/02/2026 a 04/05/2026 (90 dias) · Gerado em: 04/05/2026</p>
+
+  <!-- ALERTA CRÍTICO -->
+  <div class="alert-banner">
+    <strong>⚠ Alerta crítico:</strong> A impression share de <strong>todas as palavras-chave ativas está em ~10%</strong>. Isso significa que os anúncios aparecem em apenas 1 de cada 10 buscas elegíveis. O principal limitador é o orçamento. Há enorme potencial represado esperando para ser desbloqueado.
+  </div>
+
+  <!-- KPIs GERAIS -->
+  <div class="section">
+    <h2>Visão Geral — 90 dias</h2>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-value">R$3.547</div>
+        <div class="kpi-label">Investimento total</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">1.827</div>
+        <div class="kpi-label">Cliques totais</div>
+      </div>
+      <div class="kpi green">
+        <div class="kpi-value">268</div>
+        <div class="kpi-label">Conversões (clique WhatsApp)</div>
+      </div>
+      <div class="kpi green">
+        <div class="kpi-value">R$13,24</div>
+        <div class="kpi-label">Custo por conversão (CPA)</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">9,23%</div>
+        <div class="kpi-label">CTR médio</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">R$1,94</div>
+        <div class="kpi-label">CPC médio</div>
+      </div>
+      <div class="kpi orange">
+        <div class="kpi-value">~10%</div>
+        <div class="kpi-label">Impression Share</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-value">14,67%</div>
+        <div class="kpi-label">Taxa de conversão (cliques→conv)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPANHAS ATIVAS -->
+  <div class="section">
+    <h2>Campanhas Ativas</h2>
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:16px;">11 campanhas pausadas. Apenas 2 gerando resultado no período.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Campanha</th>
+          <th>Custo</th>
+          <th>Cliques</th>
+          <th>Conversões</th>
+          <th>CPA</th>
+          <th>CTR</th>
+          <th>CPC Médio</th>
+          <th>Conv. Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Aparelho Auditivo</strong></td>
+          <td>R$2.676,81</td>
+          <td>1.311</td>
+          <td><strong style="color:var(--success)">166,5</strong></td>
+          <td>R$16,07</td>
+          <td>10,55%</td>
+          <td>R$2,04</td>
+          <td>12,7%</td>
+        </tr>
+        <tr>
+          <td><strong>Exame Auditivo</strong></td>
+          <td>R$870,42</td>
+          <td>516</td>
+          <td><strong style="color:var(--success)">101,5</strong></td>
+          <td>R$8,58</td>
+          <td>6,24%</td>
+          <td>R$1,69</td>
+          <td>19,7%</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="insight insight-success" style="margin-top:16px">
+      <strong>A campanha "Exame Auditivo" tem CPA de R$8,58 — quase metade do custo de "Aparelho Auditivo" (R$16,07).</strong>
+      Isso sugere que quem busca audiometria tem alta intenção de contato. A campanha de exames pode ser um funil de entrada excelente para venda de aparelhos.
+    </div>
+  </div>
+
+  <!-- PALAVRAS-CHAVE -->
+  <div class="section">
+    <h2>Palavras-chave — Top Performers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Palavra-chave</th>
+          <th>Tipo</th>
+          <th>Custo</th>
+          <th>Cliques</th>
+          <th>Conv.</th>
+          <th>CPA</th>
+          <th>CTR</th>
+          <th>Imp. Share</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>aparelho auditivo</td>
+          <td><span class="badge tag-broad">AMPLA</span></td>
+          <td>R$941,25</td>
+          <td>599</td>
+          <td><strong>90,5</strong></td>
+          <td style="color:var(--success)">R$10,40</td>
+          <td>12,61%</td>
+          <td style="color:var(--danger)"><strong>10,3%</strong></td>
+          <td><span class="badge badge-green">OK</span></td>
+        </tr>
+        <tr>
+          <td>exame audiometria</td>
+          <td><span class="badge tag-broad">AMPLA</span></td>
+          <td>R$773,11</td>
+          <td>459</td>
+          <td><strong>92,0</strong></td>
+          <td style="color:var(--success)">R$8,40</td>
+          <td>6,41%</td>
+          <td style="color:var(--danger)"><strong>10,0%</strong></td>
+          <td><span class="badge badge-green">OK</span></td>
+        </tr>
+        <tr>
+          <td>fonoaudiologia porto alegre</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$439,22</td>
+          <td>139</td>
+          <td>22,0</td>
+          <td style="color:var(--warning)">R$19,97</td>
+          <td>7,95%</td>
+          <td style="color:var(--danger)">12,1%</td>
+          <td><span class="badge badge-yellow">Monitor</span></td>
+        </tr>
+        <tr>
+          <td>aparelho de ouvido</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$138,13</td>
+          <td>95</td>
+          <td>8,0</td>
+          <td style="color:var(--success)">R$17,27</td>
+          <td>13,03%</td>
+          <td style="color:var(--danger)">10,0%</td>
+          <td><span class="badge badge-green">OK</span></td>
+        </tr>
+        <tr>
+          <td>aparelhos auditivos porto alegre</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$54,05</td>
+          <td>22</td>
+          <td>7,0</td>
+          <td style="color:var(--success)">R$7,72</td>
+          <td>9,82%</td>
+          <td style="color:var(--danger)">10,0%</td>
+          <td><span class="badge badge-green">OK</span></td>
+        </tr>
+        <tr>
+          <td>preço aparelho auditivo</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$48,30</td>
+          <td>27</td>
+          <td>7,0</td>
+          <td style="color:var(--success)">R$6,90</td>
+          <td>15,98%</td>
+          <td style="color:var(--danger)">10,0%</td>
+          <td><span class="badge badge-green">★ Star</span></td>
+        </tr>
+        <tr>
+          <td>loja de aparelhos auditivos</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$47,91</td>
+          <td>22</td>
+          <td style="color:var(--danger)">1,0</td>
+          <td style="color:var(--danger)">R$47,91</td>
+          <td>16,30%</td>
+          <td>10,0%</td>
+          <td><span class="badge badge-red">Revisar</span></td>
+        </tr>
+        <tr>
+          <td>valor aparelho auditivo</td>
+          <td><span class="badge tag-phrase">FRASE</span></td>
+          <td>R$34,86</td>
+          <td>18</td>
+          <td>4,0</td>
+          <td style="color:var(--success)">R$8,72</td>
+          <td>10,98%</td>
+          <td>10,0%</td>
+          <td><span class="badge badge-green">OK</span></td>
+        </tr>
+        <tr style="background:#fef2f2">
+          <td>teste auditivo</td>
+          <td><span class="badge tag-broad">AMPLA</span></td>
+          <td>R$4,14</td>
+          <td>1</td>
+          <td style="color:var(--danger)">0</td>
+          <td>—</td>
+          <td>1,19%</td>
+          <td>10,0%</td>
+          <td><span class="badge badge-red">Problema</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:16px">
+      <div class="insight insight-warning">
+        <strong>"loja de aparelhos auditivos": R$47,91 gastos para apenas 1 conversão (CPA R$47,91)</strong>
+        Revisar correspondência, analisar termos de pesquisa disparados e considerar pausar ou adicionar negativações.
+      </div>
+      <div class="insight insight-warning">
+        <strong>Várias palavras EXACT têm 0 cliques e 0 gasto:</strong>
+        "perda auditiva", "aparelhos de ouvido", "zumbido no ouvido", "teste de audição" etc. estão presentes mas nunca venceram leilão. O orçamento está sendo todo consumido pelas keywords amplas.
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMOS DE PESQUISA -->
+  <div class="section">
+    <h2>Termos de Pesquisa Reais</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="color:var(--success)">Top Termos com Conversão</h3>
+        <table>
+          <thead>
+            <tr><th>Termo</th><th>Conv.</th><th>Custo</th><th>CPA</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>aparelho auditivo para idosos preço</strong></td><td style="color:var(--success)"><strong>31</strong></td><td>R$278,88</td><td style="color:var(--success)">R$9,00</td></tr>
+            <tr><td>tabela de preços aparelhos auditivos</td><td>6</td><td>R$20,03</td><td style="color:var(--success)">R$3,34</td></tr>
+            <tr><td>tabela de preços de aparelhos auditivos</td><td>5</td><td>R$33,55</td><td style="color:var(--success)">R$6,71</td></tr>
+            <tr><td>aparelhos auditivos porto alegre</td><td>5</td><td>R$55,67</td><td>R$11,13</td></tr>
+            <tr><td>audiometria porto alegre</td><td>5</td><td>R$28,42</td><td style="color:var(--success)">R$5,68</td></tr>
+            <tr><td>audiometria tonal porto alegre</td><td>4</td><td>R$12,32</td><td style="color:var(--success)">R$3,08</td></tr>
+            <tr><td>como colocar aparelho auditivo</td><td>3</td><td>R$33,94</td><td>R$11,31</td></tr>
+            <tr><td>aparelho auditivo invisível preço</td><td>3</td><td>R$22,95</td><td style="color:var(--success)">R$7,65</td></tr>
+            <tr><td>quanto custa aparelho auditivo qualidade</td><td>2</td><td>R$21,17</td><td>R$10,59</td></tr>
+            <tr><td>bellosom aparelhos auditivos</td><td>2</td><td>R$7,27</td><td style="color:var(--success)">R$3,64</td></tr>
+            <tr><td>fonoaudiologia porto alegre</td><td>2</td><td>R$25,54</td><td>R$12,77</td></tr>
+            <tr><td>fonoaudiologia canoas</td><td>2</td><td>R$24,39</td><td>R$12,20</td></tr>
+            <tr><td>audiometria tonal e vocal</td><td>2</td><td>R$5,73</td><td style="color:var(--success)">R$2,87</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="color:var(--danger)">Termos sem Conversão — Alto Custo</h3>
+        <table>
+          <thead>
+            <tr><th>Termo</th><th>Custo</th><th>Problema</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>aparelho auditivos preço</td><td style="color:var(--danger)">R$42,03</td><td><span class="badge badge-yellow">Erro ortog.</span></td></tr>
+            <tr><td>audionova aparelhos auditivos</td><td style="color:var(--danger)">R$30,57</td><td><span class="badge badge-red">Concorrente</span></td></tr>
+            <tr><td>aparelhos auditivos em porto alegre rs</td><td style="color:var(--danger)">R$58,22</td><td><span class="badge badge-yellow">Verificar</span></td></tr>
+            <tr><td>aparelhos auditivos bh</td><td style="color:var(--danger)">R$17,34</td><td><span class="badge badge-red">Fora geo</span></td></tr>
+            <tr><td>aparelhos auditivos em são paulo</td><td style="color:var(--danger)">R$14,59</td><td><span class="badge badge-red">Fora geo</span></td></tr>
+            <tr><td>aparelhos auditivos em santo andré</td><td style="color:var(--danger)">R$10,58</td><td><span class="badge badge-red">Fora geo</span></td></tr>
+            <tr><td>aparelhos auditivos tatuapé</td><td style="color:var(--danger)">R$9,96</td><td><span class="badge badge-red">Fora geo</span></td></tr>
+            <tr><td>onde vender aparelho auditivo usado</td><td style="color:var(--danger)">R$10,28</td><td><span class="badge badge-red">Intenção errada</span></td></tr>
+            <tr><td>limpeza de ouvido porto alegre</td><td style="color:var(--danger)">R$16,16</td><td><span class="badge badge-yellow">Serv. diferente</span></td></tr>
+            <tr><td>telesom</td><td style="color:var(--danger)">R$8,50</td><td><span class="badge badge-red">Concorrente</span></td></tr>
+            <tr><td>viva som</td><td style="color:var(--danger)">R$8,30</td><td><span class="badge badge-red">Concorrente</span></td></tr>
+            <tr><td>marcar audiometria</td><td style="color:var(--danger)">R$10,77</td><td><span class="badge badge-yellow">Verificar página</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <div class="insight insight-success">
+        <strong>Maior estrela: "aparelho auditivo para idosos preço" — 31 conversões a R$9,00 cada.</strong>
+        Este é o maior gerador de conversões da conta. Termo com altíssima intenção de compra. Deve virar uma keyword exata dedicada com lances maiores.
+      </div>
+      <div class="insight insight-danger">
+        <strong>Desperdício geográfico identificado: ~R$52 gastos em buscas de SP, BH, Santo André e Tatuapé.</strong>
+        O Google está exibindo anúncios para usuários fora do RS. Configuração de geo precisa ser revisada imediatamente.
+      </div>
+      <div class="insight insight-warning">
+        <strong>Concorrentes consumindo orçamento: Audionova (R$30,57), Telesom (R$8,50), Viva Som (R$8,30).</strong>
+        Adicionar como palavras-chave negativas para parar de pagar por buscas de marca da concorrência.
+      </div>
+    </div>
+  </div>
+
+  <!-- ANÚNCIOS TOP -->
+  <div class="section">
+    <h2>Anúncios com Melhor Performance</h2>
+    <table>
+      <thead>
+        <tr><th>Anúncio</th><th>Grupo</th><th>Conv.</th><th>Cliques</th><th>CTR</th><th>Títulos principais</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ID 794639643743</td>
+          <td>Aparelhos Auditivos</td>
+          <td style="color:var(--success)"><strong>107,0</strong></td>
+          <td>890</td>
+          <td>10,62%</td>
+          <td><em>"Bellosom - Zona Norte POA" | "Cansado de não ouvir bem?" | "Volte a participar de conversa"</em></td>
+        </tr>
+        <tr>
+          <td>ID 800185579653</td>
+          <td>Aparelhos Auditivos</td>
+          <td style="color:var(--success)"><strong>59,5</strong></td>
+          <td>421</td>
+          <td>10,40%</td>
+          <td><em>"Bellosom - Porto Alegre" | "Aparelho Auditivo Porto Alegre" | "Cansado de Não Ouvir Direito?"</em></td>
+        </tr>
+        <tr>
+          <td>ID 794640096911</td>
+          <td>Grupo de anúncios 1</td>
+          <td style="color:var(--success)"><strong>101,5</strong></td>
+          <td>516</td>
+          <td>6,24%</td>
+          <td><em>"Bellosom - Aparelhos Auditivos" | "Exame de Audiometria em POA" | "Avaliação Auditiva POA"</em></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="insight insight-info" style="margin-top:16px">
+      <strong>Os 3 anúncios ativos concentram 100% das conversões. O headline emocional "Cansado de não ouvir bem?" performa melhor que os informativos.</strong>
+      Testar variações com gatilhos de preço e discrição ("Aparelho Invisível" / "A partir de R$X") pode aumentar conversão.
+    </div>
+  </div>
+
+  <!-- INSIGHTS ESTRATÉGICOS -->
+  <div class="section">
+    <h2>Insights Estratégicos</h2>
+    <div class="insight insight-danger">
+      <strong>1. Impression Share crítico: 10% em todas as keywords</strong>
+      A conta está gravemente limitada por orçamento. Isso significa que há 9x mais tráfego potencial que você não está capturando. Se o orçamento subir de R$1.000 para R$2.000/mês, a estimativa é de ~250 conversões adicionais por trimestre, mantendo o mesmo CPA.
+    </div>
+    <div class="insight insight-success">
+      <strong>2. Intenção de preço converte muito bem</strong>
+      Termos como "preço aparelho auditivo", "tabela de preços", "valor aparelho auditivo", "aparelho auditivo para idosos preço" têm CPA inferior à média. A landing page deve destacar preços ou ao menos faixas de preço para alinhar expectativa.
+    </div>
+    <div class="insight insight-success">
+      <strong>3. Campanha de Exames é a mais eficiente (CPA R$8,58)</strong>
+      Pessoas que buscam audiometria têm alta intenção de resolver o problema auditivo. Esse público é um excelente candidato à venda de aparelhos. Considere integrar a jornada: exame → diagnóstico → aparelho.
+    </div>
+    <div class="insight insight-warning">
+      <strong>4. Estratégia de lances não otimizada</strong>
+      Com impression share de 10%, o Google não tem dados suficientes para otimizar lances automáticos (Target CPA / Maximizar Conversões). O orçamento precisa aumentar ou o Target CPA precisa ser relaxado para que o algoritmo trabalhe melhor.
+    </div>
+    <div class="insight insight-warning">
+      <strong>5. Presença de marca própria sem captura paga</strong>
+      "bellosom aparelhos auditivos" gerou 2 conversões com CTR de 54,55% e custo mínimo (R$7,27). Uma campanha de marca dedicada protegeria esse tráfego e custaria centavos por clique.
+    </div>
+    <div class="insight insight-danger">
+      <strong>6. Anúncios sem extensões visíveis — perda de espaço no resultado</strong>
+      Não foram identificadas extensões de sitelink, callout ou chamada ativa. Extensões aumentam a área de clique do anúncio e podem elevar CTR em até 15%.
+    </div>
+  </div>
+
+  <!-- CHECKLIST DE OTIMIZAÇÕES -->
+  <div class="section">
+    <h2>✅ Checklist de Otimizações — Passo a Passo</h2>
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:20px">Marque cada item ao concluir. O conteúdo será riscado automaticamente. Prioridades: <span class="badge p-alta">Alta</span> <span class="badge p-media">Média</span> <span class="badge p-baixa">Baixa</span></p>
+
+    <!-- GRUPO 1: Imediato -->
+    <div class="checklist-group">
+      <h3>🔴 Ação Imediata — Esta semana</h3>
+      <ul class="checklist" id="checklist">
+
+        <li id="item1" onclick="toggle('item1')">
+          <input type="checkbox" id="cb1" onclick="event.stopPropagation(); toggle('item1')">
+          <div class="item-body">
+            <div class="item-title">Adicionar negativações geográficas: excluir SP, BH, Santo André, Tatuapé</div>
+            <div class="item-desc">Em Configurações de campanha → Segmentação por local → Excluir regiões. Já identificados nos termos: "aparelhos auditivos em são paulo" (R$14,59), "bh" (R$17,34), "santo andré" (R$10,58), "tatuapé" (R$9,96). Desperdício confirmado: R$52+.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item2" onclick="toggle('item2')">
+          <input type="checkbox" id="cb2" onclick="event.stopPropagation(); toggle('item2')">
+          <div class="item-body">
+            <div class="item-title">Negativar marcas concorrentes: audionova, telesom, viva som</div>
+            <div class="item-desc">Adicionar como palavras-chave negativas exatas nas duas campanhas ativas. Identificado: Audionova (R$30,57), Telesom (R$8,50), Viva Som (R$8,30). Total desperdiçado: ~R$47. Sem nenhum retorno.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item3" onclick="toggle('item3')">
+          <input type="checkbox" id="cb3" onclick="event.stopPropagation(); toggle('item3')">
+          <div class="item-body">
+            <div class="item-title">Negativar intenção de venda: "vender aparelho auditivo usado", "usado"</div>
+            <div class="item-desc">Quem quer vender o aparelho não vai comprar. Adicionar negative: "vender", "usado", "segunda mão". Já identificado: "onde vender aparelho auditivo usado" (R$10,28).</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item4" onclick="toggle('item4')">
+          <input type="checkbox" id="cb4" onclick="event.stopPropagation(); toggle('item4')">
+          <div class="item-body">
+            <div class="item-title">Criar keyword exata: [aparelho auditivo para idosos preço]</div>
+            <div class="item-desc">Este termo gerou 31 conversões a R$9,00 cada — o melhor da conta. Criar como EXATO na campanha Aparelho Auditivo com lance manual mais alto (sugestão: R$3,50–R$4,00) para garantir topo de página e maior volume.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item5" onclick="toggle('item5')">
+          <input type="checkbox" id="cb5" onclick="event.stopPropagation(); toggle('item5')">
+          <div class="item-body">
+            <div class="item-title">Revisar configuração de segmentação geográfica das campanhas ativas</div>
+            <div class="item-desc">Verificar se está em "Presença" (não "Interesse") e se o raio está correto. A conta está recebendo tráfego de fora do RS, o que confirma má configuração. Ajustar para raio de 30–50km de Porto Alegre ou apenas RS.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- GRUPO 2: Curto prazo -->
+    <div class="checklist-group">
+      <h3>🟡 Curto Prazo — Próximos 15 dias</h3>
+      <ul class="checklist">
+
+        <li id="item6" onclick="toggle('item6')">
+          <input type="checkbox" id="cb6" onclick="event.stopPropagation(); toggle('item6')">
+          <div class="item-body">
+            <div class="item-title">Criar campanha de marca própria: Bellosom</div>
+            <div class="item-desc">Keywords: [bellosom], [bellosom aparelhos auditivos], [bellosom porto alegre]. CTR de 54% confirma alta intenção. CPC de marca própria costuma ser R$0,20–R$0,50. Orçamento sugerido: R$3–R$5/dia. Protege a marca de concorrentes.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item7" onclick="toggle('item7')">
+          <input type="checkbox" id="cb7" onclick="event.stopPropagation(); toggle('item7')">
+          <div class="item-body">
+            <div class="item-title">Criar keywords exatas para os melhores termos de pesquisa identificados</div>
+            <div class="item-desc">Adicionar como EXATO: [tabela de preços aparelhos auditivos], [audiometria tonal porto alegre], [aparelho auditivo invisível preço], [aparelhos auditivos porto alegre preços]. Com bid manual ligeiramente superior ao atual para garantir veiculação.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item8" onclick="toggle('item8')">
+          <input type="checkbox" id="cb8" onclick="event.stopPropagation(); toggle('item8')">
+          <div class="item-body">
+            <div class="item-title">Pausar ou ajustar "loja de aparelhos auditivos" — CPA de R$47,91</div>
+            <div class="item-desc">Esta keyword de frase gastou R$47,91 para gerar apenas 1 conversão. Revisar os termos de pesquisa disparados por ela e negativar os ruins. Se continuar ineficiente após 7 dias, pausar.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="item9" onclick="toggle('item9')">
+          <input type="checkbox" id="cb9" onclick="event.stopPropagation(); toggle('item9')">
+          <div class="item-body">
+            <div class="item-title">Adicionar extensões de anúncio: Sitelinks, Callouts e Extensão de Chamada</div>
+            <div class="item-desc">Sitelinks sugeridos: "Ver Preços", "Agendar Avaliação", "Nossa Localização", "Aparelhos Discretos". Callouts: "Fonoaudiólogos Especializados", "Tecnologia de Ponta", "Avaliação Gratuita". Extensão de chamada com o número da clínica. Aumenta CTR em ~15%.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item10" onclick="toggle('item10')">
+          <input type="checkbox" id="cb10" onclick="event.stopPropagation(); toggle('item10')">
+          <div class="item-body">
+            <div class="item-title">Criar lista de negativações ampla para termos irrelevantes</div>
+            <div class="item-desc">Negativar na lista de campanha: "grátis", "gratuito" (se não for oferta real), "brindes", "emprego", "curso", "concurso", "como funciona" (informacional sem intenção), "DIY", "fazer em casa". Revisar os 2.311 termos para mais candidatos.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="item11" onclick="toggle('item11')">
+          <input type="checkbox" id="cb11" onclick="event.stopPropagation(); toggle('item11')">
+          <div class="item-body">
+            <div class="item-title">Testar novo anúncio com foco em preço e discrição</div>
+            <div class="item-desc">Os dados mostram alta demanda por termos de preço e aparelhos invisíveis. Criar RSA com títulos: "Aparelhos a Partir de R$X" / "Aparelho Invisível em POA" / "Preço Justo, Tecnologia de Ponta". Descrição: informar faixa de preço ou condição especial para estimular clique.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- GRUPO 3: Médio prazo -->
+    <div class="checklist-group">
+      <h3>🟢 Médio Prazo — Próximos 30–60 dias</h3>
+      <ul class="checklist">
+
+        <li id="item12" onclick="toggle('item12')">
+          <input type="checkbox" id="cb12" onclick="event.stopPropagation(); toggle('item12')">
+          <div class="item-body">
+            <div class="item-title">Apresentar proposta de aumento de orçamento ao cliente</div>
+            <div class="item-desc">Impression share de 10% é o maior limitador da conta. A conta tem CPA comprovado de R$13,24. Apresentar ao cliente: cada R$1.000 adicionais pode gerar ~75 contatos novos via WhatsApp. Proposta: dobrar orçamento de R$1.000 para R$2.000/mês.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="item13" onclick="toggle('item13')">
+          <input type="checkbox" id="cb13" onclick="event.stopPropagation(); toggle('item13')">
+          <div class="item-body">
+            <div class="item-title">Reativar e testar Performance Max com foco em vendas</div>
+            <div class="item-desc">Há 2 campanhas PMax pausadas (NOVA-ABRIL/25 e 02-Perf.Max-teste1). Montar uma nova PMax bem estruturada com: ativos criativos de qualidade, lista de públicos de remarketing, sinal de público baseado nos conversores atuais e orçamento separado de R$30–R$50/dia.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="item14" onclick="toggle('item14')">
+          <input type="checkbox" id="cb14" onclick="event.stopPropagation(); toggle('item14')">
+          <div class="item-body">
+            <div class="item-title">Configurar conversões de ligação telefônica</div>
+            <div class="item-desc">Há uma campanha de ligações pausada (02 - ligações). Antes de reativá-la, confirmar se a tag de conversão de chamada está configurada corretamente no Google Ads. Ligações podem ter ticket médio maior e ciclo de venda mais curto.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="item15" onclick="toggle('item15')">
+          <input type="checkbox" id="cb15" onclick="event.stopPropagation(); toggle('item15')">
+          <div class="item-body">
+            <div class="item-title">Organizar e nomear campanhas com padrão consistente</div>
+            <div class="item-desc">A conta tem nomes como "Bellosom POA Emotive Dezembro 2020", "01 - zona norte [5km]", "NOVA-ABRIL/25". Adotar padrão: [TIPO] [OBJETIVO] [LOCAL] [DATA]. Ex: "[SEARCH] [Aparelho Auditivo] [POA] [2026]". Facilita análise e auditoria futura.</div>
+          </div>
+          <span class="priority p-baixa">Baixa</span>
+        </li>
+
+        <li id="item16" onclick="toggle('item16')">
+          <input type="checkbox" id="cb16" onclick="event.stopPropagation(); toggle('item16')">
+          <div class="item-body">
+            <div class="item-title">Segmentar campanha de Aparelho Auditivo por faixas de intenção</div>
+            <div class="item-desc">Criar grupos separados: (1) Intenção de compra direta — "comprar aparelho auditivo", "aparelho auditivo preço"; (2) Intenção informacional avançada — "aparelho auditivo para surdez profunda", "aparelho auditivo invisível". Permite lances e anúncios mais específicos por grupo.</div>
+          </div>
+          <span class="priority p-baixa">Baixa</span>
+        </li>
+
+        <li id="item17" onclick="toggle('item17')">
+          <input type="checkbox" id="cb17" onclick="event.stopPropagation(); toggle('item17')">
+          <div class="item-body">
+            <div class="item-title">Implementar remarketing para visitantes da landing page</div>
+            <div class="item-desc">Criar lista de remarketing de quem visitou /aparelho-auditivo-bellosom e não converteu. Veicular anúncios de retargeting via Display ou YouTube com oferta de avaliação gratuita. Custo de remarketing é tipicamente 3–5x mais barato que prospecting.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="item18" onclick="toggle('item18')">
+          <input type="checkbox" id="cb18" onclick="event.stopPropagation(); toggle('item18')">
+          <div class="item-body">
+            <div class="item-title">Revisar e otimizar a landing page de aparelhos auditivos</div>
+            <div class="item-desc">Os dados mostram que termos de preço convertem bem — verificar se a LP menciona preços ou faixas. Testar: adicionar seção de preços (ou "a partir de"), depoimentos de clientes, fotos dos aparelhos modernos e CTA de WhatsApp mais visível. Pequenas melhorias de CRO podem baixar o CPA sem mexer no investimento.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    Relatório gerado automaticamente via Google Ads API · Bellosom Aparelhos Auditivos · Eduardo Metinger — Gestão de Tráfego
+  </footer>
+
+</div>
+
+<script>
+  function toggle(id) {
+    const li = document.getElementById(id);
+    const cb = li.querySelector('input[type=checkbox]');
+    if (document.activeElement !== cb) {
+      cb.checked = !cb.checked;
+    }
+    if (cb.checked) {
+      li.classList.add('done');
+    } else {
+      li.classList.remove('done');
+    }
+    saveState();
+  }
+
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('.checklist li[id]').forEach(li => {
+      const cb = li.querySelector('input[type=checkbox]');
+      state[li.id] = cb.checked;
+    });
+    try { localStorage.setItem('bellosom_checklist', JSON.stringify(state)); } catch(e) {}
+  }
+
+  function loadState() {
+    try {
+      const state = JSON.parse(localStorage.getItem('bellosom_checklist') || '{}');
+      Object.entries(state).forEach(([id, checked]) => {
+        const li = document.getElementById(id);
+        if (!li) return;
+        const cb = li.querySelector('input[type=checkbox]');
+        cb.checked = checked;
+        if (checked) li.classList.add('done');
+      });
+    } catch(e) {}
+  }
+
+  loadState();
+</script>
+</body>
+</html>

@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aparelhos Auditivos em Porto Alegre | Bellosom</title>
+  <meta name="description" content="Encontre aparelhos auditivos modernos e atendimento especializado em Porto Alegre. Fale com a Bellosom e solicite um orçamento.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Aparelhos Auditivos em Porto Alegre | Bellosom">
+  <meta property="og:description" content="Aparelhos auditivos modernos, discretos e atendimento especializado em Porto Alegre.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bellosom.com.br/aparelho-auditivo-bellosom">
+  <meta name="theme-color" content="#4A2050">
+  <link rel="icon" type="image/png" href="img/favicon%20bellosom.png">
+  <link rel="apple-touch-icon" href="img/favicon%20bellosom.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Bellosom Aparelhos Auditivos",
+    "description": "Atendimento em saúde auditiva, aparelhos auditivos, audiometria e orientação em Porto Alegre.",
+    "url": "https://www.bellosom.com.br/aparelho-auditivo-bellosom",
+    "telephone": "+555131265001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Assis Brasil, 3768",
+      "addressLocality": "Porto Alegre",
+      "addressRegion": "RS",
+      "postalCode": "91010-003",
+      "addressCountry": "BR"
+    },
+    "areaServed": "Porto Alegre e região",
+    "medicalSpecialty": "Audiology",
+    "sameAs": [
+      "https://www.instagram.com/bellosomaparelhosauditivos/",
+      "https://www.facebook.com/bellosomaparelhosauditivos"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --roxo-principal: #4A2050;
+      --roxo-escuro: #7B3163;
+      --roxo-acao: #9F58B1;
+      --lilas-medio: #C198CB;
+      --lilas-claro: #DDBFE5;
+      --verde-cta: #03A85A;
+      --branco: #FFFFFF;
+      --cinza-escuro: #252126;
+      --cinza-medio: #767176;
+      --cinza-fundo: #FBF8FC;
+      --borda: rgba(74, 32, 80, 0.12);
+      --sombra: 0 18px 50px rgba(42, 42, 42, 0.08);
+      --raio: 8px;
+      --largura: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--cinza-escuro);
+      background: var(--branco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 28px, var(--largura));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 52px 0;
+    }
+
+    .section.alt {
+      background: var(--cinza-fundo);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      color: var(--roxo-escuro);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      color: var(--branco);
+      font-size: 2.15rem;
+      line-height: 1.05;
+      letter-spacing: 0;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: var(--roxo-principal);
+      font-size: 1.68rem;
+      line-height: 1.18;
+      letter-spacing: 0;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      color: var(--roxo-principal);
+      font-size: 1.08rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: #514B52;
+      font-size: 1rem;
+      margin-bottom: 22px;
+    }
+
+    .hero .lead {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.04rem;
+    }
+
+    .topbar {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--borda);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 66px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .phone {
+      display: none;
+      color: var(--roxo-principal);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: var(--raio);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(42, 42, 42, 0.16);
+      outline: 0;
+    }
+
+    .btn-primary {
+      color: var(--branco);
+      background: var(--verde-cta);
+    }
+
+    .btn-secondary {
+      color: var(--branco);
+      background: var(--roxo-acao);
+    }
+
+    .btn-outline {
+      color: var(--roxo-principal);
+      background: var(--branco);
+      border: 1px solid var(--borda);
+    }
+
+    .hero {
+      overflow: hidden;
+      color: var(--branco);
+      background: var(--roxo-principal);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+      padding: 46px 0 54px;
+    }
+
+    .hero-actions,
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .trust-line {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .photo-placeholder {
+      display: grid;
+      min-height: 230px;
+      padding: 24px;
+      place-items: center;
+      color: var(--roxo-principal);
+      background:
+        linear-gradient(135deg, rgba(251, 248, 252, 0.98), rgba(221, 191, 229, 0.55));
+      border: 1px solid rgba(74, 32, 80, 0.18);
+      border-radius: var(--raio);
+      box-shadow: var(--sombra);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .hero .photo-placeholder {
+      min-height: 300px;
+      color: var(--branco);
+      background:
+        linear-gradient(135deg, rgba(159, 88, 177, 0.36), rgba(255, 255, 255, 0.08));
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid.two,
+    .grid.three,
+    .grid.four {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      height: 100%;
+      padding: 18px;
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      box-shadow: none;
+    }
+
+    .symptom {
+      position: relative;
+      padding-left: 42px;
+      font-weight: 700;
+    }
+
+    .symptom::before {
+      position: absolute;
+      top: 22px;
+      left: 18px;
+      width: 10px;
+      height: 10px;
+      background: var(--verde-cta);
+      border-radius: 999px;
+      content: "";
+    }
+
+    .split {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .steps {
+      counter-reset: passos;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 62px;
+    }
+
+    .step::before {
+      counter-increment: passos;
+      content: counter(passos);
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      color: var(--branco);
+      background: var(--roxo-principal);
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    .stats-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .stats-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-weight: 700;
+    }
+
+    .stats-list li::before {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      background: var(--lilas-claro);
+      border: 5px solid var(--roxo-escuro);
+      border-radius: 999px;
+      content: "";
+    }
+
+    .testimonial {
+      color: var(--roxo-principal);
+      background: #FBF8FC;
+      border-color: rgba(123, 49, 99, 0.18);
+    }
+
+    .testimonial blockquote {
+      margin: 0 0 16px;
+      font-size: 0.95rem;
+    }
+
+    .testimonial cite {
+      color: var(--roxo-escuro);
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .local-box {
+      display: grid;
+      gap: 16px;
+      padding: 22px;
+      color: var(--branco);
+      background: var(--roxo-principal);
+      border-radius: var(--raio);
+    }
+
+    .local-box h2,
+    .local-box p {
+      color: var(--branco);
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+    }
+
+    summary {
+      padding: 18px 20px;
+      color: var(--roxo-principal);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    details p {
+      padding: 0 20px 18px;
+      margin: 0;
+    }
+
+    .final-cta {
+      color: var(--branco);
+      background: var(--roxo-principal);
+      text-align: center;
+    }
+
+    .final-cta h2,
+    .final-cta p {
+      color: var(--branco);
+      margin-inline: auto;
+    }
+
+    .footer {
+      padding: 30px 0;
+      color: rgba(255, 255, 255, 0.78);
+      background: #321637;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    .footer a {
+      color: var(--branco);
+      font-weight: 800;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      color: var(--branco);
+      background: var(--verde-cta);
+      border-radius: 999px;
+      box-shadow: 0 14px 34px rgba(3, 168, 90, 0.34);
+      animation: pulse-whatsapp 1.9s ease-in-out infinite;
+    }
+
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    @keyframes pulse-whatsapp {
+      0% {
+        box-shadow: 0 0 0 0 rgba(3, 168, 90, 0.48), 0 14px 34px rgba(3, 168, 90, 0.34);
+        transform: scale(1);
+      }
+
+      70% {
+        box-shadow: 0 0 0 14px rgba(3, 168, 90, 0), 0 14px 34px rgba(3, 168, 90, 0.34);
+        transform: scale(1.03);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(3, 168, 90, 0), 0 14px 34px rgba(3, 168, 90, 0.34);
+        transform: scale(1);
+      }
+    }
+
+    @media (min-width: 680px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.12rem;
+      }
+
+      .hero-actions,
+      .cta-row {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .phone {
+        display: inline-flex;
+      }
+
+      .brand img {
+        width: 178px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .whatsapp-float {
+        right: 24px;
+        bottom: 24px;
+        width: 62px;
+        height: 62px;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .hero-grid,
+      .split {
+        grid-template-columns: 1.04fr 0.96fr;
+      }
+
+      .hero-grid {
+        padding: 78px 0;
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio">
+        <img src="img/logotipo%20bellosom%20-%20preto%20e%20rosa.png" alt="Bellosom Aparelhos Auditivos" width="1221" height="313">
+        <span class="sr-only">Bellosom Aparelhos Auditivos</span>
+      </a>
+      <div class="nav-actions">
+        <a class="phone" href="tel:+555131265001">(51) 3126-5001</a>
+        <a class="btn btn-primary cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20aparelhos%20auditivos." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- Hero principal -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Aparelhos auditivos em Porto Alegre</p>
+          <h1>Volte a ouvir melhor com aparelhos auditivos modernos e atendimento especializado em Porto Alegre</h1>
+          <p class="lead">Aparelhos discretos, tecnologia atual e orientação próxima para escolher com mais segurança.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary cta-orcamento" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20fazer%20um%20or%C3%A7amento%20de%20aparelho%20auditivo." target="_blank" rel="noopener">Quero fazer um orçamento</a>
+            <a class="btn btn-secondary cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Bellosom%20sobre%20aparelhos%20auditivos." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          </div>
+          <p class="trust-line">Atendimento especializado em saúde auditiva • Porto Alegre/RS • Bellosom Aparelhos Auditivos</p>
+        </div>
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto de pessoa sorrindo em ambiente familiar">
+          [FOTO: pessoa sorrindo em ambiente familiar, transmitindo conexão e qualidade de vida]
+        </div>
+      </div>
+    </section>
+
+    <!-- Identificação de sintomas -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Sinais de atenção</p>
+        <h2>Você sente que está ouvindo, mas não entende bem as conversas?</h2>
+        <p class="lead">A perda auditiva costuma chegar aos poucos. Estes sinais merecem atenção:</p>
+        <div class="grid three">
+          <div class="card symptom">Dificuldade para entender conversas</div>
+          <div class="card symptom">TV ou celular sempre em volume alto</div>
+          <div class="card symptom">Sensação de que as pessoas falam baixo</div>
+          <div class="card symptom">Dificuldade em reuniões, restaurantes ou encontros familiares</div>
+          <div class="card symptom">Zumbido ou desconforto auditivo</div>
+          <div class="card symptom">Cansaço para acompanhar conversas</div>
+        </div>
+        <div class="cta-row" style="margin-top: 24px;">
+          <a class="btn btn-primary cta-orcamento" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20entender%20minhas%20op%C3%A7%C3%B5es%20de%20aparelho%20auditivo." target="_blank" rel="noopener">Quero entender minhas opções</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluções auditivas -->
+    <section class="section alt">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Solução personalizada</p>
+          <h2>Aparelhos discretos, confortáveis e pensados para sua rotina</h2>
+          <p class="lead">A escolha considera sua audição, hábitos e preferência de uso.</p>
+          <div class="grid two">
+            <div class="card">
+              <h3>Modelos discretos</h3>
+              <p>Pequenos, leves e confortáveis.</p>
+            </div>
+            <div class="card">
+              <h3>Tecnologia moderna</h3>
+              <p>Recursos para clareza de fala e adaptação sonora.</p>
+            </div>
+            <div class="card">
+              <h3>Atendimento especializado</h3>
+              <p>Orientação profissional em cada etapa.</p>
+            </div>
+            <div class="card">
+              <h3>Suporte após a compra</h3>
+              <p>Ajustes e acompanhamento na adaptação.</p>
+            </div>
+          </div>
+        </div>
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto de aparelho auditivo discreto em close">
+          [FOTO: aparelho auditivo discreto em close]
+        </div>
+      </div>
+    </section>
+
+    <!-- Processo de atendimento -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Como funciona o atendimento na Bellosom</h2>
+        <div class="grid four steps">
+          <div class="card step">
+            <h3>Você entra em contato</h3>
+            <p>Chame nossa equipe pelo WhatsApp.</p>
+          </div>
+          <div class="card step">
+            <h3>Entendemos sua necessidade</h3>
+            <p>Conversamos sobre sintomas, rotina e expectativas.</p>
+          </div>
+          <div class="card step">
+            <h3>Indicamos a melhor solução auditiva</h3>
+            <p>Apresentamos modelos e possibilidades de adaptação.</p>
+          </div>
+          <div class="card step">
+            <h3>Acompanhamos sua adaptação</h3>
+            <p>Você conta com suporte para usar melhor o aparelho.</p>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top: 24px;">
+          <a class="btn btn-primary cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20sobre%20aparelhos%20auditivos." target="_blank" rel="noopener">Falar com um especialista</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autoridade e confiança -->
+    <section class="section alt">
+      <div class="container split">
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto da fachada da Bellosom ou equipe em atendimento">
+          [FOTO: fachada da Bellosom ou equipe em atendimento]
+        </div>
+        <div>
+          <p class="eyebrow">Confiança local</p>
+          <h2>Cuidado próximo, tecnologia e experiência em saúde auditiva</h2>
+          <p class="lead">A Bellosom atende em Porto Alegre com foco em aparelhos auditivos, audiometria e adaptação.</p>
+          <ul class="stats-list">
+            <li>Atendimento em Porto Alegre/RS</li>
+            <li>Especialistas em saúde auditiva</li>
+            <li>Aparelhos auditivos modernos</li>
+            <li>Orientação personalizada</li>
+            <li>Suporte durante a adaptação</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova social -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Depoimentos</p>
+        <h2>Quem passou pela Bellosom recomenda</h2>
+        <div class="grid four">
+          <div class="card testimonial">
+            <blockquote>"Amigos, para quem precisa de aparelho auditivo, não esqueça desse nome: Bellosom. Um super atendimento e meninas simpáticas, parabéns!"</blockquote>
+            <cite>Odilon Grassi</cite>
+          </div>
+          <div class="card testimonial">
+            <blockquote>"Excelente clínica, atendimento de ponta e profissionais muito atenciosas. Fiquei satisfeito com meus aparelhos auditivos."</blockquote>
+            <cite>Emilio Santos</cite>
+          </div>
+          <div class="card testimonial">
+            <blockquote>"Testei e comprei meu aparelho e fui bem atendida sempre. Recomendo."</blockquote>
+            <cite>Rosane B. Hagenn</cite>
+          </div>
+          <div class="card testimonial">
+            <blockquote>"Excelente atendimento. Eu recomendo, sem dúvidas um ótimo trabalho da Bellosom Aparelhos Auditivos."</blockquote>
+            <cite>Blanca M. Menezes</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipos de aparelhos -->
+    <section class="section alt">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Opções disponíveis</p>
+          <h2>Opções para diferentes necessidades</h2>
+          <p class="lead">Discrição, recarga, conectividade e adaptação para diferentes graus de perda auditiva.</p>
+          <div class="grid two">
+            <div class="card">
+              <h3>Aparelhos discretos</h3>
+              <p>Para quem busca uso mais natural no dia a dia.</p>
+            </div>
+            <div class="card">
+              <h3>Aparelhos recarregáveis</h3>
+              <p>Mais praticidade na rotina.</p>
+            </div>
+            <div class="card">
+              <h3>Aparelhos com conectividade</h3>
+              <p>Recursos para chamadas, mídia e ambientes sonoros.</p>
+            </div>
+            <div class="card">
+              <h3>Aparelhos para diferentes graus de perda auditiva</h3>
+              <p>Escolha orientada conforme avaliação e rotina.</p>
+            </div>
+          </div>
+          <div class="cta-row" style="margin-top: 24px;">
+            <a class="btn btn-primary cta-orcamento" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20conhecer%20as%20op%C3%A7%C3%B5es%20de%20aparelhos%20auditivos." target="_blank" rel="noopener">Quero conhecer as opções</a>
+          </div>
+        </div>
+        <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto de linha de aparelhos auditivos">
+          [FOTO: linha de aparelhos auditivos]
+        </div>
+      </div>
+    </section>
+
+    <!-- Localização -->
+    <section class="section">
+      <div class="container local-box">
+        <div>
+          <p class="eyebrow" style="color: #DDBFE5;">Atendimento local</p>
+          <h2>Aparelhos auditivos em Porto Alegre</h2>
+          <p>Atendimento para aparelhos auditivos, audiometria e orientação em saúde auditiva.</p>
+          <p><strong>Endereço:</strong> Av. Assis Brasil, 3768 — Jd. Lindóia, Porto Alegre/RS<br><strong>Telefone/WhatsApp:</strong> (51) 3126-5001</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Bellosom%20em%20Porto%20Alegre." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Av.%20Assis%20Brasil%2C%203768%20Porto%20Alegre%20RS" target="_blank" rel="noopener">Ver rota no mapa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Dúvidas comuns</p>
+        <h2>Perguntas frequentes sobre aparelhos auditivos</h2>
+        <div class="faq">
+          <details>
+            <summary>Como saber se preciso de aparelho auditivo?</summary>
+            <p>Dificuldade em conversas, TV alta e incômodo em ambientes com ruído são sinais importantes.</p>
+          </details>
+          <details>
+            <summary>Qual o melhor aparelho auditivo para mim?</summary>
+            <p>Depende da sua audição, rotina e preferência de uso. A Bellosom orienta essa escolha.</p>
+          </details>
+          <details>
+            <summary>Existem aparelhos auditivos discretos?</summary>
+            <p>Sim. Há modelos pequenos, leves e modernos.</p>
+          </details>
+          <details>
+            <summary>Aparelho auditivo ajuda em casos de zumbido?</summary>
+            <p>Em alguns casos, pode ajudar quando o zumbido está associado à perda auditiva.</p>
+          </details>
+          <details>
+            <summary>Quanto custa um aparelho auditivo?</summary>
+            <p>Varia conforme tecnologia, modelo e necessidade auditiva. Chame a Bellosom para entender as opções.</p>
+          </details>
+          <details>
+            <summary>Preciso fazer exame antes de escolher o aparelho?</summary>
+            <p>A avaliação ajuda a identificar o grau de perda e orientar a escolha.</p>
+          </details>
+          <details>
+            <summary>A Bellosom fica em Porto Alegre?</summary>
+            <p>Sim. A Bellosom atende na Av. Assis Brasil, 3768 — Jd. Lindóia, Porto Alegre/RS.</p>
+          </details>
+          <details>
+            <summary>Como faço para falar com a equipe?</summary>
+            <p>Chame pelo WhatsApp no número (51) 3126-5001.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="section final-cta">
+      <div class="container">
+        <h2>Dê o primeiro passo para ouvir melhor</h2>
+        <p class="lead">Fale com a Bellosom e entenda suas opções com orientação profissional.</p>
+        <div class="cta-row" style="justify-content: center;">
+          <a class="btn btn-primary cta-orcamento" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20fazer%20um%20or%C3%A7amento%20de%20aparelho%20auditivo." target="_blank" rel="noopener">Quero fazer um orçamento</a>
+          <a class="btn btn-secondary cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20Bellosom%20sobre%20aparelhos%20auditivos." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float cta-whatsapp" href="https://wa.me/555131265001?text=Ol%C3%A1%2C%20quero%20fazer%20um%20or%C3%A7amento%20de%20aparelho%20auditivo." target="_blank" rel="noopener" aria-label="Falar com a Bellosom pelo WhatsApp">
+    <img src="img/icone-whatsapp.svg" alt="" width="800" height="800" aria-hidden="true">
+  </a>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <strong>Bellosom Aparelhos Auditivos</strong>
+      <span>Av. Assis Brasil, 3768 — Jd. Lindóia, Porto Alegre/RS • (51) 3126-5001</span>
+      <span class="footer-links">
+        <a href="https://www.instagram.com/bellosomaparelhosauditivos/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/bellosomaparelhosauditivos" target="_blank" rel="noopener">Facebook</a>
+      </span>
+      <span>Responsável técnica: Cintia Ourique e Silva - CRFª 8673 - 7 • CNPJ: 26.174.048/0001-00</span>
+    </div>
+  </footer>
+
+</body>
+</html>

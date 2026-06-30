@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist: Anúncios & Landing Page — Bellosom</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --success: #057a55;
+    --danger: #c81e1e;
+    --warning: #c27803;
+    --neutral: #374151;
+    --bg: #f9fafb;
+    --card: #ffffff;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 32px 16px; }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+  h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+  .checklist { list-style: none; }
+  .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; }
+  .checklist li:hover { background: #f3f4f6; }
+  .checklist li.done { background: #f9fafb; }
+  .checklist li.done .item-body { text-decoration: line-through; color: var(--muted); }
+  .checklist li.done .item-body code,
+  .checklist li.done .item-body .tag-before,
+  .checklist li.done .item-body .tag-after { opacity: 0.45; }
+  .checklist input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 3px; cursor: pointer; accent-color: var(--success); }
+  .item-body { flex: 1; font-size: 0.88rem; }
+  .item-title { font-weight: 700; font-size: 0.93rem; color: var(--text); margin-bottom: 4px; }
+  .item-why { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+  .item-why strong { color: var(--neutral); }
+  .priority { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 2px 7px; border-radius: 99px; flex-shrink: 0; margin-top: 3px; white-space: nowrap; }
+  .p-alta { background: #fee2e2; color: #991b1b; }
+  .p-media { background: #fef3c7; color: #92400e; }
+  .p-baixa { background: #d1fae5; color: #065f46; }
+  .checklist-group { margin-bottom: 28px; }
+  .checklist-group-title { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .group-badge { background: var(--bg); border: 1px solid var(--border); border-radius: 99px; padding: 1px 10px; font-size: 0.72rem; }
+  code { background: #f3f4f6; border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; font-family: 'Menlo', 'Monaco', monospace; font-size: 0.82rem; color: var(--neutral); }
+  .tag-before { display: inline-block; background: #fee2e2; border-radius: 4px; padding: 2px 8px; font-size: 0.79rem; color: #991b1b; font-family: monospace; margin: 2px 0; }
+  .tag-after { display: inline-block; background: #d1fae5; border-radius: 4px; padding: 2px 8px; font-size: 0.79rem; color: #065f46; font-family: monospace; margin: 2px 0; }
+  .change-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; flex-wrap: wrap; }
+  .arrow { color: var(--muted); font-size: 0.85rem; }
+  .ad-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-size: 0.75rem; margin-bottom: 6px; }
+  .strength-excellent { color: #065f46; font-weight: 700; }
+  .strength-good { color: #1e40af; font-weight: 700; }
+  .qs-pill { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; }
+  .qs-low { background: #fee2e2; color: #991b1b; }
+  .qs-mid { background: #fef3c7; color: #92400e; }
+  .qs-ok { background: #d1fae5; color: #065f46; }
+  .alert-banner { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 0.88rem; color: #78350f; }
+  .alert-banner strong { color: #92400e; }
+  .progress-bar { background: #e5e7eb; border-radius: 99px; height: 6px; margin-top: 12px; }
+  .progress-fill { background: var(--success); height: 6px; border-radius: 99px; width: 0%; transition: width 0.3s; }
+  .progress-label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; text-align: right; }
+  .divider { border: none; border-top: 1px dashed var(--border); margin: 16px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .char-ok { color: var(--success); font-size: 0.75rem; }
+  .char-warn { color: var(--danger); font-size: 0.75rem; }
+  .section-intro { font-size: 0.85rem; color: var(--neutral); background: var(--bg); border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; border-left: 3px solid var(--primary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Checklist: Anúncios & Landing Page</h1>
+  <p class="subtitle">Bellosom Aparelhos Auditivos · Campanhas ativas · Baseado em dados da API — 04/05/2026</p>
+  <p class="subtitle" style="margin-bottom:24px">Documento separado do Relatório de 90 dias · Foco: AdRank, Recursos de Anúncio e Página de Destino</p>
+
+  <div class="alert-banner">
+    <strong>Diagnóstico central de AdRank:</strong> A <strong>Landing Page Experience está abaixo da média em 100% das palavras-chave ativas</strong>. Isso é o principal fator que mantém o Quality Score baixo (entre 1 e 5) e eleva o CPC real acima do necessário. Melhorar a LP é a ação de maior impacto para a conta inteira.
+  </div>
+
+  <div id="progress-wrapper" style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:24px;">
+    <div style="font-weight:600;font-size:0.9rem;margin-bottom:4px">Progresso do Checklist</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">0 de 0 itens concluídos</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- BLOCO 1: CAMPANHA APARELHO AUDITIVO                          -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2>Campanha: Aparelho Auditivo — Recursos dos Anúncios</h2>
+    <div class="section-intro">
+      2 anúncios ativos nesta campanha: <strong>ID 794639643743</strong> (força <span class="strength-good">GOOD</span> · 11 títulos · 112 conv) e <strong>ID 800185579653</strong> (força <span class="strength-excellent">EXCELLENT</span> · 15 títulos · 59,5 conv). Nenhum título menciona preço, embora dados mostrem que intenção de preço gera CPA 35% mais baixo.
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Títulos — problemas identificados <span class="group-badge">Ambos os anúncios</span></div>
+      <ul class="checklist">
+
+        <li id="a1" onclick="toggle('a1')">
+          <input type="checkbox" id="cba1" onclick="event.stopPropagation();toggle('a1')">
+          <div class="item-body">
+            <div class="item-title">Adicionar título com intenção de preço para capturar buscas de alto valor</div>
+            <div class="change-row">
+              <span class="tag-before">Qualidade de vida renovada (26)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Preços que Cabem no Seu Bolso (30)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-before">Soluções Auditivas para Você (28)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Ver Preços e Modelos Disponíveis (31)⚠</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-after">Consulte Preço do Aparelho Auditivo (35)⚠ → Preço do Aparelho Auditivo (27)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> "aparelho auditivo para idosos preço" gerou 31 conversões a R$9,00 — o maior CPA eficiente da conta. Termos como "tabela de preços" e "valor aparelho auditivo" convertem 35% abaixo da média. Não ter nenhum título de preço é deixar esse público sem mensagem relevante.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="a2" onclick="toggle('a2')">
+          <input type="checkbox" id="cba2" onclick="event.stopPropagation();toggle('a2')">
+          <div class="item-body">
+            <div class="item-title">Substituir títulos genéricos e redundantes por variações com diferencial real</div>
+            <div class="change-row">
+              <span class="tag-before">Soluções Auditivas para Você (28)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Aparelho Discreto e Moderno POA (31)⚠ → Aparelho Discreto em Porto Alegre (30)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-before">Qualidade de vida renovada (26)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Anos de Experiência em Audição (30)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Títulos genéricos como "Soluções Auditivas para Você" não se diferenciam dos concorrentes. O Google utiliza relevância semântica dos títulos para avaliar "Creative Quality". Títulos com especificidade (localidade + diferencial) melhoram o Score de Criativo, que hoje está em AVERAGE.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="a3" onclick="toggle('a3')">
+          <input type="checkbox" id="cba3" onclick="event.stopPropagation();toggle('a3')">
+          <div class="item-body">
+            <div class="item-title">Adicionar título com CTA de WhatsApp explícito</div>
+            <div class="change-row">
+              <span class="tag-after">Chame Agora pelo WhatsApp (26)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-after">Agende pelo WhatsApp Agora (26)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> A conversão-alvo da conta é "clique para WhatsApp". Nenhum título atual menciona WhatsApp diretamente. O Google combina títulos dinamicamente — ter um CTA explícito de WhatsApp garante que ele apareça em pelo menos parte das combinações exibidas.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="a4" onclick="toggle('a4')">
+          <input type="checkbox" id="cba4" onclick="event.stopPropagation();toggle('a4')">
+          <div class="item-body">
+            <div class="item-title">Corrigir abreviação informal "p/" no anúncio ID 800185579653</div>
+            <div class="change-row">
+              <span class="tag-before">Tecnologia Invisível p/ Ouvir (29)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Aparelho Invisível — Ouça Mais (30)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> O "p/" é uma abreviação informal que pode ser lida como erro ou descuido. Além disso, a mensagem "p/ Ouvir" é redundante num anúncio de aparelho auditivo. A nova versão mantém "invisível" (alto CTR pelos dados) e substitui por algo mais assertivo.</div>
+          </div>
+          <span class="priority p-baixa">Baixa</span>
+        </li>
+
+        <li id="a5" onclick="toggle('a5')">
+          <input type="checkbox" id="cba5" onclick="event.stopPropagation();toggle('a5')">
+          <div class="item-body">
+            <div class="item-title">Completar anúncio ID 794639643743 de 11 para 15 títulos</div>
+            <div class="change-row">
+              <span class="tag-after">Aparelho Invisível em Porto Alegre (34)⚠ → Aparelho Invisível em POA (25)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-after">Avaliação Auditiva Sem Custo (28)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-after">Fonoaudiólogos Especializados (29)</span>
+            </div>
+            <div class="change-row">
+              <span class="tag-after">Preço do Aparelho Auditivo (26)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Com 11 dos 15 títulos possíveis, o Google tem menos combinações para testar. Anúncios com 15 títulos recebem naturalmente mais variedade semântica, o que melhora o Ad Strength de GOOD para EXCELLENT e amplia a cobertura de termos relevantes.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Descrições — problemas identificados <span class="group-badge">Ambos os anúncios</span></div>
+      <ul class="checklist">
+
+        <li id="a6" onclick="toggle('a6')">
+          <input type="checkbox" id="cba6" onclick="event.stopPropagation();toggle('a6')">
+          <div class="item-body">
+            <div class="item-title">Adicionar CTA de WhatsApp explícito em pelo menos uma descrição</div>
+            <div class="change-row">
+              <span class="tag-before">Dê o primeiro passo. Agende sua avaliação auditiva com nossos fonoaudiólogos (76)</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Dê o primeiro passo. Chame agora no WhatsApp e agende sua avaliação gratuita (75)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Nenhuma das 4 descrições ativas desta campanha menciona WhatsApp. O usuário que clica vai para uma LP — se já souber que pode chamar no WhatsApp, a expectativa está alinhada antes mesmo do clique, o que melhora taxa de conversão pós-clique (e a LP Experience do Google).</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="a7" onclick="toggle('a7')">
+          <input type="checkbox" id="cba7" onclick="event.stopPropagation();toggle('a7')">
+          <div class="item-body">
+            <div class="item-title">Incluir diferencial concreto (tempo de mercado ou número de clientes atendidos)</div>
+            <div class="change-row">
+              <span class="tag-before">Conheça a tecnologia de ponta em aparelhos auditivos que combinam design e máximo conforto (90)</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Mais de [X] anos atendendo Porto Alegre. Tecnologia e conforto em aparelhos auditivos (85)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> "Tecnologia de ponta" e "máximo conforto" são promessas usadas por todos os concorrentes. Um número concreto (anos, pacientes atendidos, marcas disponíveis) gera credibilidade instantânea e diferencia a Bellosom no leilão visual.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="a8" onclick="toggle('a8')">
+          <input type="checkbox" id="cba8" onclick="event.stopPropagation();toggle('a8')">
+          <div class="item-body">
+            <div class="item-title">Adicionar menção de faixa de preço ou condição em uma descrição</div>
+            <div class="change-row">
+              <span class="tag-after">Aparelhos a partir de R$X. Avaliação gratuita com fonoaudiólogo. Chame no WhatsApp (81)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Os dados mostram que termos com intenção de preço têm CPA 35% menor. Uma descrição que responde à pergunta "quanto custa?" qualifica melhor o lead antes do clique — resultando em menor taxa de rejeição na LP e melhor LP Experience score.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- BLOCO 2: CAMPANHA EXAME AUDITIVO                             -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2>Campanha: Exame Auditivo — Recursos dos Anúncios</h2>
+    <div class="section-intro">
+      1 anúncio ativo: <strong>ID 794640096911</strong> (força <span class="strength-good">GOOD</span> · 8 títulos · 105,5 conv · CPA R$8,58). Tem apenas 8 dos 15 títulos possíveis. Contém erro ortográfico confirmado e título truncado.
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Correções obrigatórias — erros confirmados <span class="group-badge">ID 794640096911</span></div>
+      <ul class="checklist">
+
+        <li id="b1" onclick="toggle('b1')">
+          <input type="checkbox" id="cbb1" onclick="event.stopPropagation();toggle('b1')">
+          <div class="item-body">
+            <div class="item-title">Corrigir erro ortográfico: "Fonaudiólogos" → "Fonoaudiólogos"</div>
+            <div class="change-row">
+              <span class="tag-before">Exame de Audiometria feito por Fonaudiólogos profissionais. Solução de problemas auditivos (90)</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Exame de Audiometria com Fonoaudiólogos especializados em Porto Alegre (69)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Erro ortográfico confirmado via API: "Fonaudiólogos" (falta o "o"). Além de comprometer a credibilidade profissional da clínica, erros gramaticais são penalizados pelo Google na avaliação de qualidade de anúncio e podem afetar o Ad Rank.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="b2" onclick="toggle('b2')">
+          <input type="checkbox" id="cbb2" onclick="event.stopPropagation();toggle('b2')">
+          <div class="item-body">
+            <div class="item-title">Corrigir título truncado: "Entre em Contato pelo Whats" → "Entre em Contato pelo WhatsApp"</div>
+            <div class="change-row">
+              <span class="tag-before">Entre em Contato pelo Whats (27 chars) ← TRUNCADO</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Entre em Contato pelo WhatsApp (30 chars ✓)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> O título atual termina em "Whats" — palavra sem sentido que prejudica a leitura e transmite descuido. "WhatsApp" completo cabe exatamente em 30 caracteres. O texto truncado provavelmente está causando redução de CTR em combinações onde este título aparece.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="b3" onclick="toggle('b3')">
+          <input type="checkbox" id="cbb3" onclick="event.stopPropagation();toggle('b3')">
+          <div class="item-body">
+            <div class="item-title">Corrigir descrição incompleta: "Ligue e agende já o seu" — falta o complemento</div>
+            <div class="change-row">
+              <span class="tag-before">Faça seu teste auditivo hoje mesmo em Porto Alegre. Ligue e agende já o seu (75)</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Faça seu teste auditivo hoje em Porto Alegre. Agende pelo WhatsApp agora mesmo (76)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> A frase termina em "o seu" — "o seu" o quê? A descrição parece ter sido cortada durante edição e nunca corrigida. Além de prejudicar a compreensão, o Google avalia a qualidade semântica do copy para o Quality Score de "Creative Quality".</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Títulos — expandir e melhorar <span class="group-badge">ID 794640096911 · 8→15 títulos</span></div>
+      <ul class="checklist">
+
+        <li id="b4" onclick="toggle('b4')">
+          <input type="checkbox" id="cbb4" onclick="event.stopPropagation();toggle('b4')">
+          <div class="item-body">
+            <div class="item-title">Adicionar 7 títulos para chegar a 15 — aumentar de GOOD para EXCELLENT</div>
+            <div class="change-row"><span class="tag-after">Fonoaudiólogo em Porto Alegre (29)</span></div>
+            <div class="change-row"><span class="tag-after">Audiometria na Zona Norte POA (29)</span></div>
+            <div class="change-row"><span class="tag-after">Diagnóstico Auditivo Completo (29)</span></div>
+            <div class="change-row"><span class="tag-after">Zumbido no Ouvido? Consulte Já (30)</span></div>
+            <div class="change-row"><span class="tag-after">Problemas de Audição? Agende (28)</span></div>
+            <div class="change-row"><span class="tag-after">Audiometria em POA | Agende Já (30)</span></div>
+            <div class="change-row"><span class="tag-after">Exame Auditivo — Resultado Rápido (33)⚠ → Exame Auditivo Resultado Rápido (31)⚠ → Resultado Rápido em POA (21)</span></div>
+            <div class="item-why"><strong>Por quê:</strong> Com apenas 8 títulos, o Google tem combinações limitadas para otimizar. 15 títulos = mais cobertura semântica, melhor Ad Strength e maior probabilidade de combinar com diferentes intenções de busca. A campanha tem QS 3 e Creative Quality ABOVE_AVERAGE — maximizar títulos é o próximo passo natural.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="b5" onclick="toggle('b5')">
+          <input type="checkbox" id="cbb5" onclick="event.stopPropagation();toggle('b5')">
+          <div class="item-body">
+            <div class="item-title">Adicionar título que menciona zumbido no ouvido (tinnitus)</div>
+            <div class="change-row">
+              <span class="tag-after">Tratamento para Zumbido em POA (30)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> "Zumbido no ouvido" é uma keyword na conta (EXACT, QS não avaliado por volume baixo). Pesquisas por zumbido têm alta intenção clínica — quem busca isso tem um problema ativo e quer resolver. Conectar esse título à campanha de exames cobre uma demanda já presente na conta.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+        <li id="b6" onclick="toggle('b6')">
+          <input type="checkbox" id="cbb6" onclick="event.stopPropagation();toggle('b6')">
+          <div class="item-body">
+            <div class="item-title">Remover ou reformular "Bellosom - Aparelhos Auditivos" desta campanha de Exame</div>
+            <div class="change-row">
+              <span class="tag-before">Bellosom - Aparelhos Auditivos (30)</span>
+              <span class="arrow">→</span>
+              <span class="tag-after">Bellosom — Exames Auditivos POA (30)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> O título "Bellosom - Aparelhos Auditivos" em uma campanha de Exame Auditivo gera dissonância semântica. Quando o Google combina este título com uma busca por "audiometria", a relevância cai. Ajustar para "Exames Auditivos" mantém a marca e aumenta a relevância para o grupo temático.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Descrições — melhorias</div>
+      <ul class="checklist">
+
+        <li id="b7" onclick="toggle('b7')">
+          <input type="checkbox" id="cbb7" onclick="event.stopPropagation();toggle('b7')">
+          <div class="item-body">
+            <div class="item-title">Adicionar descrição conectando exame à solução de aparelho auditivo</div>
+            <div class="change-row">
+              <span class="tag-after">Faça o exame e saia com a solução certa. Aparelhos modernos com avaliação inclusa (80)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> Esta campanha tem CPA de R$8,58 — a mais eficiente. Conectar o exame à venda de aparelhos na própria descrição prepara o lead para a oferta completa ainda antes do clique. Essa é a ponte estratégica que pode converter um lead de "exame" em comprador de aparelho.</div>
+          </div>
+          <span class="priority p-alta">Alta</span>
+        </li>
+
+        <li id="b8" onclick="toggle('b8')">
+          <input type="checkbox" id="cbb8" onclick="event.stopPropagation();toggle('b8')">
+          <div class="item-body">
+            <div class="item-title">Substituir "conheça nossas soluções" por CTA de WhatsApp direto</div>
+            <div class="change-row">
+              <span class="tag-before">Se você tem problemas de audição, faça exame de audiometria e conheça nossas soluções (85)</span>
+            </div>
+            <div class="change-row">
+              <span class="arrow">→</span>
+              <span class="tag-after">Problema de audição? Agende seu exame de audiometria pelo WhatsApp. É rápido (74)</span>
+            </div>
+            <div class="item-why"><strong>Por quê:</strong> "Conheça nossas soluções" é vago e não direciona a ação. Substituir por um CTA específico com o canal de conversão (WhatsApp) alinha o anúncio à jornada real do lead e melhora a relevância entre o copy do anúncio e a LP.</div>
+          </div>
+          <span class="priority p-media">Média</span>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- BLOCO 3: EXTENSÕES                                           -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2>Extensões de Anúncio</h2>
+    <div class="section-intro">
+      Campanha Aparelho Auditivo tem <strong>Sitelink REMOVIDO</strong> — crítico para AdRank. Campanha Exame Auditivo tem apenas 1 sitelink ativo. Callouts estão presentes em ambas (12 cada). Extensão de chamada (CALL) ativa nas duas campanhas.
+    </div>
+
+    <ul class="checklist">
+
+      <li id="c1" onclick="toggle('c1')">
+        <input type="checkbox" id="cbc1" onclick="event.stopPropagation();toggle('c1')">
+        <div class="item-body">
+          <div class="item-title">Recriar Sitelinks na campanha Aparelho Auditivo (status atual: REMOVED)</div>
+          <div class="item-why"><strong>Por quê:</strong> O Sitelink da campanha Aparelho Auditivo foi removido — status confirmado via API como REMOVED. Sitelinks são a extensão de maior impacto no AdRank: aumentam a área clicável do anúncio, sinalizam autoridade da conta ao algoritmo do Google e podem elevar o CTR em 10–20%. Sem sitelinks, o anúncio perde espaço visual para concorrentes que os têm.</div>
+          <div style="margin-top:8px;font-size:0.82rem;color:var(--neutral)">
+            <strong>Sitelinks sugeridos (texto · URL):</strong><br>
+            · "Ver Preços dos Aparelhos" → /aparelho-auditivo-bellosom#precos<br>
+            · "Agendar Avaliação Gratuita" → /aparelho-auditivo-bellosom#agendar<br>
+            · "Como Funciona o Aparelho" → /aparelho-auditivo-bellosom#como-funciona<br>
+            · "Nossa Localização em POA" → /contato
+          </div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="c2" onclick="toggle('c2')">
+        <input type="checkbox" id="cbc2" onclick="event.stopPropagation();toggle('c2')">
+        <div class="item-body">
+          <div class="item-title">Expandir Sitelinks da campanha Exame Auditivo (1 → mínimo 4)</div>
+          <div class="item-why"><strong>Por quê:</strong> Com apenas 1 sitelink, o Google não tem opções para exibir o bloco completo de links (que exige mínimo 2, idealmente 4). Sitelinks não exibidos não contribuem para o AdRank. Google exibe até 4 sitelinks no desktop e 2 no mobile — cada um ocupando espaço que o concorrente também está disputando.</div>
+          <div style="margin-top:8px;font-size:0.82rem;color:var(--neutral)">
+            <strong>Sitelinks sugeridos:</strong><br>
+            · "O que é Audiometria?" → /exame-audiometria#o-que-e<br>
+            · "Agendar Exame Auditivo" → /exame-audiometria#agendar<br>
+            · "Para quem é indicado?" → /exame-audiometria#indicacoes<br>
+            · "Conheça a Bellosom" → /sobre
+          </div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="c3" onclick="toggle('c3')">
+        <input type="checkbox" id="cbc3" onclick="event.stopPropagation();toggle('c3')">
+        <div class="item-body">
+          <div class="item-title">Auditar e atualizar o conteúdo dos 12 Callouts de cada campanha</div>
+          <div class="item-why"><strong>Por quê:</strong> Há 12 callouts em cada campanha, mas não foi possível verificar o texto atual via API. Callouts devem ser frases de 25 caracteres ou menos que reforcem diferenciais: "Fonoaudiólogos Especializados", "Tecnologia Discreta", "Avaliação Gratuita", "Zona Norte de POA", "Aparelhos Modernos", "Atendimento Humanizado". Callouts vagos ou repetitivos desperdiçam slots de extensão.</div>
+        </div>
+        <span class="priority p-media">Média</span>
+      </li>
+
+      <li id="c4" onclick="toggle('c4')">
+        <input type="checkbox" id="cbc4" onclick="event.stopPropagation();toggle('c4')">
+        <div class="item-body">
+          <div class="item-title">Criar extensão de Snippet Estruturado (Structured Snippet) em ambas as campanhas</div>
+          <div class="item-why"><strong>Por quê:</strong> Snippets estruturados não estão ativos em nenhuma das campanhas. Eles permitem listar marcas de aparelhos (Rexton, Interton, etc.), tipos de serviços (Audiometria Tonal, Audiometria Vocal, Manutenção) ou modelos (intracanal, retroauricular, invisível). São gratuitos, aumentam o espaço do anúncio e melhoram a relevância semântica para o Google.</div>
+        </div>
+        <span class="priority p-media">Média</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- BLOCO 4: QUALITY SCORE / ADRANK                              -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2>Quality Score & AdRank — Melhorias Diretas</h2>
+    <div class="section-intro">
+      Quality Score atual: maioria entre 1 e 4 (ideal: 7+). O componente que derruba todas as keywords é o mesmo: <strong>Landing Page Experience = BELOW_AVERAGE</strong>. O componente CTR Expected também está abaixo da média na maioria — reflexo de anúncios com mensagens genéricas.
+    </div>
+
+    <ul class="checklist">
+
+      <li id="d1" onclick="toggle('d1')">
+        <input type="checkbox" id="cbd1" onclick="event.stopPropagation();toggle('d1')">
+        <div class="item-body">
+          <div class="item-title">Investigar e melhorar a velocidade de carregamento das duas LPs no mobile</div>
+          <div class="item-why"><strong>Por quê:</strong> Landing Page Experience BELOW_AVERAGE em 100% das keywords é fortemente correlacionado com velocidade de carregamento ruim no mobile. O Google PageSpeed Insights atribui nota 0–100: nota abaixo de 50 no mobile praticamente garante LP Experience BELOW_AVERAGE. Verificar ambas as URLs:</div>
+          <div style="margin-top:6px;font-size:0.82rem;color:var(--neutral)">
+            · <code>bellosom.com.br/aparelhosauditivospoa</code><br>
+            · <code>bellosom.com.br/exame-audiometria</code><br>
+            Usar PageSpeed Insights (pagespeed.web.dev) no modo Mobile. Meta: Score &gt; 70. Cada segundo a menos de carregamento pode aumentar conversões em 7%.
+          </div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="d2" onclick="toggle('d2')">
+        <input type="checkbox" id="cbd2" onclick="event.stopPropagation();toggle('d2')">
+        <div class="item-body">
+          <div class="item-title">Verificar coerência semântica entre keywords e conteúdo das LPs</div>
+          <div class="item-why"><strong>Por quê:</strong> Para "fonoaudiologia porto alegre" (QS=1 — o pior da conta), a LP destino deve conter a palavra "fonoaudiologia" de forma proeminente. Para "preço aparelho auditivo" (QS=1), a LP deve ter informações de preço. O Google rastreia a LP e verifica se o conteúdo é relevante para a intenção da busca. Se não encontrar, penaliza com LP Experience BELOW_AVERAGE.</div>
+          <div style="margin-top:6px;font-size:0.82rem;color:var(--neutral)">
+            Verificar se as seguintes palavras aparecem em H1/H2/parágrafo principal das LPs:<br>
+            · "aparelho auditivo" + "preço" ou "valor" na LP de aparelhos<br>
+            · "fonoaudiologia" ou "fonoaudiólogo" em destaque<br>
+            · "audiometria" + "Porto Alegre" na LP de exames
+          </div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="d3" onclick="toggle('d3')">
+        <input type="checkbox" id="cbd3" onclick="event.stopPropagation();toggle('d3')">
+        <div class="item-body">
+          <div class="item-title">Elevar QS de "fonoaudiologia porto alegre" (QS=1) — keyword mais cara por conversão</div>
+          <div class="item-why"><strong>Por quê:</strong> QS=1 com Creative Quality BELOW_AVERAGE e LP Experience BELOW_AVERAGE significa que o Google está cobrando o máximo de CPC para exibir este anúncio. Com QS=1, o CPC real pode ser até 4x maior do que seria com QS=7. Esta keyword gasta R$439,22 e tem CPA de R$19,97 — 50% acima da média da conta. Melhorar o QS pode reduzir o CPA em R$7–R$10 por conversão.</div>
+          <div style="margin-top:6px;font-size:0.82rem;color:var(--neutral)">
+            Ações específicas:<br>
+            1. Criar grupo de anúncio dedicado só para "fonoaudiologia" com anúncio 100% focado em fono<br>
+            2. Adicionar "fonoaudiologia" explicitamente nos títulos do anúncio desse grupo<br>
+            3. Direcionar para LP com conteúdo de fonoaudiologia em destaque
+          </div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="d4" onclick="toggle('d4')">
+        <input type="checkbox" id="cbd4" onclick="event.stopPropagation();toggle('d4')">
+        <div class="item-body">
+          <div class="item-title">Ativar rotação de anúncios otimizada e verificar modo de exibição preferencial</div>
+          <div class="item-why"><strong>Por quê:</strong> Para RSAs (Responsive Search Ads), o Google já faz otimização automática de combinações. Mas é importante confirmar que a configuração de rotação está em "Otimizar: priorizar os anúncios com maior probabilidade de cliques". Qualquer modo manual interfere na capacidade do Google de encontrar as melhores combinações de títulos e melhorar o CTR previsto.</div>
+        </div>
+        <span class="priority p-baixa">Baixa</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- BLOCO 5: LANDING PAGE                                        -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <h2>Landing Page — Otimizações para Conversão</h2>
+    <div class="section-intro">
+      LPs avaliadas: <code>bellosom.com.br/aparelhosauditivospoa</code> (campanha Aparelho) e <code>bellosom.com.br/exame-audiometria</code> (campanha Exame). LP Experience = BELOW_AVERAGE em todas as keywords — impacto direto no Quality Score e no custo por clique de toda a conta.
+    </div>
+
+    <ul class="checklist">
+
+      <li id="e1" onclick="toggle('e1')">
+        <input type="checkbox" id="cbe1" onclick="event.stopPropagation();toggle('e1')">
+        <div class="item-body">
+          <div class="item-title">Adicionar botão de WhatsApp fixo (flutuante) e visível acima da dobra</div>
+          <div class="item-why"><strong>Por quê:</strong> A conversão alvo da conta é "clique para WhatsApp". Se o botão de WhatsApp não estiver imediatamente visível sem rolagem, o usuário que clicou no anúncio não sabe o que fazer. Um botão flutuante (fixed) garante acesso ao CTA em qualquer ponto da leitura da página — reduzindo fricção e aumentando taxa de conversão diretamente.</div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="e2" onclick="toggle('e2')">
+        <input type="checkbox" id="cbe2" onclick="event.stopPropagation();toggle('e2')">
+        <div class="item-body">
+          <div class="item-title">Inserir seção de preços ou faixas de preço na LP de Aparelhos Auditivos</div>
+          <div class="item-why"><strong>Por quê:</strong> Os dados mostram que termos de preço ("tabela de preços", "valor aparelho auditivo", "preço aparelho auditivo") têm CPA 35% abaixo da média. Quando alguém que pesquisou "preço do aparelho auditivo" chega na LP e não encontra nenhuma informação de preço, a taxa de rejeição aumenta — o que é sinalizado ao Google como LP Experience ruim. Uma seção como "A partir de R$X — conheça as opções" resolve isso sem comprometer a estratégia comercial.</div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="e3" onclick="toggle('e3')">
+        <input type="checkbox" id="cbe3" onclick="event.stopPropagation();toggle('e3')">
+        <div class="item-body">
+          <div class="item-title">Adicionar prova social visível: depoimentos de pacientes, nota Google, número de atendimentos</div>
+          <div class="item-why"><strong>Por quê:</strong> O público da Bellosom (pessoas com perda auditiva e familiares) toma decisões baseadas em confiança. Depoimentos reais, nota do Google Meu Negócio (estrelas) e um número como "mais de X pacientes atendidos" reduzem a hesitação e aumentam a taxa de contato. LPs com prova social têm em média 15–30% mais conversão em nichos de saúde.</div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="e4" onclick="toggle('e4')">
+        <input type="checkbox" id="cbe4" onclick="event.stopPropagation();toggle('e4')">
+        <div class="item-body">
+          <div class="item-title">Incluir conteúdo sobre fonoaudiólogos em destaque na LP de Aparelhos</div>
+          <div class="item-why"><strong>Por quê:</strong> "fonoaudiologia porto alegre" é uma keyword ativa com R$439,22 gastos e QS=1. A LP de aparelhos não tem relevância semântica para esse termo, então o Google penaliza a LP Experience. Adicionar um bloco como "Atendimento com Fonoaudiólogos Especializados" com breve descrição da equipe resolve a dissonância e pode elevar o QS desta keyword de 1 para 4+.</div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="e5" onclick="toggle('e5')">
+        <input type="checkbox" id="cbe5" onclick="event.stopPropagation();toggle('e5')">
+        <div class="item-body">
+          <div class="item-title">Garantir que o H1 da LP de Aparelhos contenha "aparelho auditivo" e "Porto Alegre"</div>
+          <div class="item-why"><strong>Por quê:</strong> O Google analisa o H1 da LP como sinal principal de relevância. A keyword com maior gasto da conta é "aparelho auditivo" (BROAD, R$941,25) e "aparelhos auditivos porto alegre" está entre as mais eficientes. O H1 da LP precisa espelhar essas intenções. Um H1 como "Aparelhos Auditivos em Porto Alegre — Bellosom" seria ideal para cobrir ambas as keywords.</div>
+        </div>
+        <span class="priority p-alta">Alta</span>
+      </li>
+
+      <li id="e6" onclick="toggle('e6')">
+        <input type="checkbox" id="cbe6" onclick="event.stopPropagation();toggle('e6')">
+        <div class="item-body">
+          <div class="item-title">Otimizar imagens para reduzir tempo de carregamento no mobile</div>
+          <div class="item-why"><strong>Por quê:</strong> Imagens não otimizadas são a causa mais comum de lentidão em LPs de clínicas de saúde. Converter para WebP, adicionar lazy loading e dimensionar corretamente pode reduzir o peso da página em 40–60%. A AD_IMAGE está ativa na campanha (11 imagens) — se as mesmas imagens estão na LP sem otimização, o impacto é direto no PageSpeed Score e na LP Experience do Google Ads.</div>
+        </div>
+        <span class="priority p-media">Média</span>
+      </li>
+
+      <li id="e7" onclick="toggle('e7')">
+        <input type="checkbox" id="cbe7" onclick="event.stopPropagation();toggle('e7')">
+        <div class="item-body">
+          <div class="item-title">Criar ou melhorar a LP de Exame Auditivo com foco em "audiometria tonal" e "fonoaudiólogo"</div>
+          <div class="item-why"><strong>Por quê:</strong> "audiometria tonal porto alegre" gerou 4 conversões com CTR de 22% — alta intenção. A LP de exame precisa mencionar "audiometria tonal" especificamente, não apenas "exame auditivo" genérico. Adicionar seção explicando tipos de exame (tonal, vocal, impedanciometria) melhora a relevância semântica para o Google e a informação ao paciente.</div>
+        </div>
+        <span class="priority p-media">Média</span>
+      </li>
+
+      <li id="e8" onclick="toggle('e8')">
+        <input type="checkbox" id="cbe8" onclick="event.stopPropagation();toggle('e8')">
+        <div class="item-body">
+          <div class="item-title">Adicionar mapa e endereço visível na LP (reforçar "Zona Norte de Porto Alegre")</div>
+          <div class="item-why"><strong>Por quê:</strong> A campanha tem problemas de tráfego geográfico (buscas de SP, BH). Um mapa incorporado do Google Maps com o endereço da Av. Assis Brasil ajuda o algoritmo do Google a entender que o negócio é local, e ajuda o usuário a confirmar que a clínica atende sua região. Também é um sinal de negócio legítimo que melhora a LP Experience.</div>
+        </div>
+        <span class="priority p-baixa">Baixa</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <footer>
+    Checklist gerado via Google Ads API · Baseado em dados reais de Quality Score, Ad Strength e Asset Performance · Bellosom — Eduardo Metinger
+  </footer>
+
+</div>
+
+<script>
+  function toggle(id) {
+    const li = document.getElementById(id);
+    const cb = li.querySelector('input[type=checkbox]');
+    if (document.activeElement !== cb) cb.checked = !cb.checked;
+    li.classList.toggle('done', cb.checked);
+    saveState();
+    updateProgress();
+  }
+
+  function saveState() {
+    const state = {};
+    document.querySelectorAll('.checklist li[id]').forEach(li => {
+      state[li.id] = li.querySelector('input').checked;
+    });
+    try { localStorage.setItem('bellosom_adrank_cl', JSON.stringify(state)); } catch(e) {}
+  }
+
+  function updateProgress() {
+    const all = document.querySelectorAll('.checklist li[id]');
+    const done = document.querySelectorAll('.checklist li[id].done');
+    const pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = `${done.length} de ${all.length} itens concluídos (${pct}%)`;
+  }
+
+  function loadState() {
+    try {
+      const state = JSON.parse(localStorage.getItem('bellosom_adrank_cl') || '{}');
+      Object.entries(state).forEach(([id, checked]) => {
+        const li = document.getElementById(id);
+        if (!li) return;
+        li.querySelector('input').checked = checked;
+        if (checked) li.classList.add('done');
+      });
+    } catch(e) {}
+    updateProgress();
+  }
+
+  loadState();
+</script>
+</body>
+</html>

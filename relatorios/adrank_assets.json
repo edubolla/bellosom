@@ -1,0 +1,1145 @@
+{
+  "keywords_quality_score": [
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "aparelho auditivo",
+      "match_type": "BROAD",
+      "quality_score": 2,
+      "creative_quality": "AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 4753,
+      "cliques": 599,
+      "custo_brl": 941.25,
+      "conversoes": 90.5,
+      "cpc_medio_brl": 1.57
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "exame audiometria",
+      "match_type": "BROAD",
+      "quality_score": 3,
+      "creative_quality": "ABOVE_AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 7454,
+      "cliques": 480,
+      "custo_brl": 853.07,
+      "conversoes": 94.0,
+      "cpc_medio_brl": 1.78
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "fonoaudiologia porto alegre",
+      "match_type": "PHRASE",
+      "quality_score": 1,
+      "creative_quality": "BELOW_AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 1750,
+      "cliques": 139,
+      "custo_brl": 439.22,
+      "conversoes": 22.0,
+      "cpc_medio_brl": 3.16
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "aparelho de ouvido",
+      "match_type": "PHRASE",
+      "quality_score": 2,
+      "creative_quality": "AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 729,
+      "cliques": 95,
+      "custo_brl": 138.13,
+      "conversoes": 8.0,
+      "cpc_medio_brl": 1.45
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "exame audicao",
+      "match_type": "BROAD",
+      "quality_score": 0,
+      "creative_quality": "UNKNOWN",
+      "landing_page_quality": "UNKNOWN",
+      "expected_ctr": "UNKNOWN",
+      "impressoes": 632,
+      "cliques": 34,
+      "custo_brl": 59.71,
+      "conversoes": 6.0,
+      "cpc_medio_brl": 1.76
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "aparelhos auditivos porto alegre",
+      "match_type": "PHRASE",
+      "quality_score": 4,
+      "creative_quality": "AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "AVERAGE",
+      "impressoes": 224,
+      "cliques": 22,
+      "custo_brl": 54.05,
+      "conversoes": 7.0,
+      "cpc_medio_brl": 2.46
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "preço aparelho auditivo",
+      "match_type": "PHRASE",
+      "quality_score": 1,
+      "creative_quality": "BELOW_AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 169,
+      "cliques": 27,
+      "custo_brl": 48.3,
+      "conversoes": 7.0,
+      "cpc_medio_brl": 1.79
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "loja de aparelhos auditivos",
+      "match_type": "PHRASE",
+      "quality_score": 0,
+      "creative_quality": "UNKNOWN",
+      "landing_page_quality": "UNKNOWN",
+      "expected_ctr": "UNKNOWN",
+      "impressoes": 135,
+      "cliques": 22,
+      "custo_brl": 47.91,
+      "conversoes": 1.0,
+      "cpc_medio_brl": 2.18
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "clinica de audiometria",
+      "match_type": "BROAD",
+      "quality_score": 4,
+      "creative_quality": "AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "AVERAGE",
+      "impressoes": 212,
+      "cliques": 17,
+      "custo_brl": 45.88,
+      "conversoes": 2.5,
+      "cpc_medio_brl": 2.7
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "aparelho audicao",
+      "match_type": "PHRASE",
+      "quality_score": 0,
+      "creative_quality": "UNKNOWN",
+      "landing_page_quality": "UNKNOWN",
+      "expected_ctr": "UNKNOWN",
+      "impressoes": 185,
+      "cliques": 30,
+      "custo_brl": 41.34,
+      "conversoes": 5.0,
+      "cpc_medio_brl": 1.38
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "valor aparelho auditivo",
+      "match_type": "PHRASE",
+      "quality_score": 1,
+      "creative_quality": "BELOW_AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "BELOW_AVERAGE",
+      "impressoes": 164,
+      "cliques": 18,
+      "custo_brl": 34.86,
+      "conversoes": 4.0,
+      "cpc_medio_brl": 1.94
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "keyword": "aparelho auditivo porto alegre",
+      "match_type": "PHRASE",
+      "quality_score": 4,
+      "creative_quality": "AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "AVERAGE",
+      "impressoes": 49,
+      "cliques": 5,
+      "custo_brl": 17.36,
+      "conversoes": 1.0,
+      "cpc_medio_brl": 3.47
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "teste auditivo",
+      "match_type": "BROAD",
+      "quality_score": 5,
+      "creative_quality": "ABOVE_AVERAGE",
+      "landing_page_quality": "BELOW_AVERAGE",
+      "expected_ctr": "AVERAGE",
+      "impressoes": 96,
+      "cliques": 1,
+      "custo_brl": 4.14,
+      "conversoes": 0.0,
+      "cpc_medio_brl": 4.14
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "exame de audiologia",
+      "match_type": "BROAD",
+      "quality_score": 0,
+      "creative_quality": "UNKNOWN",
+      "landing_page_quality": "UNKNOWN",
+      "expected_ctr": "UNKNOWN",
+      "impressoes": 19,
+      "cliques": 1,
+      "custo_brl": 2.13,
+      "conversoes": 1.0,
+      "cpc_medio_brl": 2.13
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "keyword": "exame auditivo",
+      "match_type": "BROAD",
+      "quality_score": 0,
+      "creative_quality": "UNKNOWN",
+      "landing_page_quality": "UNKNOWN",
+      "expected_ctr": "UNKNOWN",
+      "impressoes": 3,
+      "cliques": 0,
+      "custo_brl": 0.0,
+      "conversoes": 0.0,
+      "cpc_medio_brl": 0.0
+    }
+  ],
+  "ads_detail": [
+    {
+      "id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "ad_strength": "GOOD",
+      "status": "ENABLED",
+      "approval": "APPROVED",
+      "titulos": [
+        {
+          "text": "Bellosom - Zona Norte POA",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Cansado de não ouvir bem?",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Volte a participar de conversa",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelho Auditivo Porto Alegre",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelhos Auditivos Modernos",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Bellosom - Porto Alegre",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Discretos e quase invisíveis",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Ouça os sons da vida de novo",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Qualidade de vida renovada",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Soluções Auditivas para Você",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelho para Melhorar Audição",
+          "pinned": "NONE"
+        }
+      ],
+      "descricoes": [
+        {
+          "text": "A perda auditiva não precisa te isolar. Redescubra a alegria de ouvir todos os detalhes",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Conheça a tecnologia de ponta em aparelhos auditivos que combinam design e máximo conforto",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Nossa equipe de fonoaudiólogos está pronta para encontrar a melhor solução para o seu caso",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Dê o primeiro passo para ouvir melhor. Agende avaliação auditiva com nossos especialistas",
+          "pinned": "NONE"
+        }
+      ],
+      "url_final": [
+        "https://www.bellosom.com.br/aparelhosauditivospoa"
+      ],
+      "impressoes": 9041,
+      "cliques": 948,
+      "custo_brl": 2067.72,
+      "conversoes": 112.0,
+      "ctr_pct": 10.49,
+      "cpc_medio_brl": 2.18
+    },
+    {
+      "id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "ad_strength": "GOOD",
+      "status": "ENABLED",
+      "approval": "APPROVED",
+      "titulos": [
+        {
+          "text": "Bellosom - Aparelhos Auditivos",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Exame de Audiometria em POA",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Avaliação Auditiva POA",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Marque Seu Teste Auditivo",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Faça Seu Teste Auditivo Hoje",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Faça seu Exame de Audiometria",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Teste de Audiometria para Você",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Entre em Contato pelo Whats",
+          "pinned": "NONE"
+        }
+      ],
+      "descricoes": [
+        {
+          "text": "Faça seu teste auditivo hoje mesmo em Porto Alegre. Ligue e agende já o seu",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Marque seu exame de audiometria na nossa clínica, na Zona Norte de POA. Chame agora",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Exame de Audiometria feito por Fonaudiólogos profissionais. Solução de problemas auditivos",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Se você tem problemas de audição, faça exame de audiometria e conheça nossas soluções",
+          "pinned": "NONE"
+        }
+      ],
+      "url_final": [
+        "https://www.bellosom.com.br/exame-audiometria"
+      ],
+      "impressoes": 8660,
+      "cliques": 548,
+      "custo_brl": 1000.05,
+      "conversoes": 105.5,
+      "ctr_pct": 6.33,
+      "cpc_medio_brl": 1.82
+    },
+    {
+      "id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "ad_strength": "EXCELLENT",
+      "status": "ENABLED",
+      "approval": "APPROVED",
+      "titulos": [
+        {
+          "text": "Bellosom - Porto Alegre",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelho Auditivo Porto Alegre",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Cansado de Não Ouvir Direito?",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Participe de Conversas",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelho Auditivo em POA",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelhos Discretos/Invisíveis",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Atendimento com Fonoaudiólogo",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Discretos e Quase Invisíveis",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Ouça os Sons da Vida de Novo",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Agende Sua Avaliação Auditiva",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Aparelho para Melhorar Audição",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Fale com Especialista",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Avaliação Fonoaudiólogo em POA",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Tecnologia Invisível p/ Ouvir",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Sem Fila—Atendimento Agendado",
+          "pinned": "NONE"
+        }
+      ],
+      "descricoes": [
+        {
+          "text": "Perda auditiva não precisa te isolar. Aparelhos modernos para recuperar qualidade de vida",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Conheça a tecnologia de ponta em aparelhos auditivos que combinam design e máximo conforto",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Nossa equipe de fonoaudiólogos está pronta para encontrar a melhor solução para o seu caso",
+          "pinned": "NONE"
+        },
+        {
+          "text": "Dê o primeiro passo. Agende sua avaliação auditiva com nossos fonoaudiólogos",
+          "pinned": "NONE"
+        }
+      ],
+      "url_final": [
+        "https://www.bellosom.com.br/aparelhosauditivospoa"
+      ],
+      "impressoes": 4049,
+      "cliques": 421,
+      "custo_brl": 846.31,
+      "conversoes": 59.5,
+      "ctr_pct": 10.4,
+      "cpc_medio_brl": 2.01
+    }
+  ],
+  "assets_performance": [
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelho Auditivo Porto Alegre",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Bellosom - Zona Norte POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Cansado de não ouvir bem?",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Volte a participar de conversa",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelhos Auditivos Modernos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Bellosom - Porto Alegre",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Discretos e quase invisíveis",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Ouça os sons da vida de novo",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Qualidade de vida renovada",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Soluções Auditivas para Você",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelho para Melhorar Audição",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "A perda auditiva não precisa te isolar. Redescubra a alegria de ouvir todos os detalhes",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Conheça a tecnologia de ponta em aparelhos auditivos que combinam design e máximo conforto",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Nossa equipe de fonoaudiólogos está pronta para encontrar a melhor solução para o seu caso",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Dê o primeiro passo para ouvir melhor. Agende avaliação auditiva com nossos especialistas",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Encontre os melhores Aparelhos Auditivos na Bellosom",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794639643743,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelhos Auditivos em Porto A | Bellosom",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Conheça nossa linha de Aparelhos Auditivos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Avaliação Auditiva POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Marque Seu Teste Auditivo",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Faça Seu Teste Auditivo Hoje",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Bellosom - Aparelhos Auditivos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Exame de Audiometria em POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Faça seu Exame de Audiometria",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Teste de Audiometria para Você",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Entre em Contato pelo Whats",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Faça seu teste auditivo hoje mesmo em Porto Alegre. Ligue e agende já o seu",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Marque seu exame de audiometria na nossa clínica, na Zona Norte de POA. Chame agora",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Exame de Audiometria feito por Fonaudiólogos profissionais. Solução de problemas auditivos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Se você tem problemas de audição, faça exame de audiometria e conheça nossas soluções",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "HEADLINE",
+      "texto": "Exame de Audiometria em Porto Alegre | Bellosom",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Descubra como está sua audição e conheça as melhores soluções",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 794640096911,
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "grupo": "Grupo de anúncios 1",
+      "tipo": "DESCRIPTION",
+      "texto": "Exame de Audiometria completo e preciso na Bellosom",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelho Auditivo Porto Alegre",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Bellosom - Zona Norte POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelhos Auditivos Modernos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Bellosom - Porto Alegre",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelho para Melhorar Audição",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Conheça a tecnologia de ponta em aparelhos auditivos que combinam design e máximo conforto",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Nossa equipe de fonoaudiólogos está pronta para encontrar a melhor solução para o seu caso",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Encontre os melhores Aparelhos Auditivos na Bellosom",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Cansado de Não Ouvir Direito?",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Participe de Conversas",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelho Auditivo em POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelhos Discretos/Invisíveis",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Atendimento com Fonoaudiólogo",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Discretos e Quase Invisíveis",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Ouça os Sons da Vida de Novo",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Agende Sua Avaliação Auditiva",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Fale com Especialista",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Avaliação Fonoaudiólogo em POA",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Tecnologia Invisível p/ Ouvir",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Sem Fila—Atendimento Agendado",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Perda auditiva não precisa te isolar. Aparelhos modernos para recuperar qualidade de vida",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "DESCRIPTION",
+      "texto": "Dê o primeiro passo. Agende sua avaliação auditiva com nossos fonoaudiólogos",
+      "performance": "NOT_APPLICABLE"
+    },
+    {
+      "ad_id": 800185579653,
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "grupo": "Aparelhos Auditivos",
+      "tipo": "HEADLINE",
+      "texto": "Aparelhos Auditivos em Porto A | Bellosom",
+      "performance": "NOT_APPLICABLE"
+    }
+  ],
+  "extensions": [
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "SITELINK",
+      "status": "REMOVED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "SITELINK",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALLOUT",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "BUSINESS_NAME",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "CALL",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "CALL",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "BUSINESS_LOGO",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "BUSINESS_LOGO",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Exame Auditivo",
+      "tipo": "BUSINESS_LOGO",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    },
+    {
+      "campanha": "[EM] [PESQUISA] Aparelho Auditivo",
+      "tipo": "AD_IMAGE",
+      "status": "ENABLED"
+    }
+  ]
+}
