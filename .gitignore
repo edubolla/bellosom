@@ -2,6 +2,10 @@
 .env.local
 .env*.local
 
+# Arquivos de contexto de IA — apenas locais
+CLAUDE.md
+AGENTS.md
+
 # macOS
 .DS_Store
 **/.DS_Store
