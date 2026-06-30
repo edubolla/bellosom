@@ -444,6 +444,11 @@ img, svg { max-width: 100%; display: block; }
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
   }
+  /* Fecha as DUAS colunas na última linha (não só o último item do DOM),
+     mantendo o mesmo número de linhas dos dois lados */
+  .symptom-list li:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--color-lilac-light);
+  }
 
   /* "Como funciona": 4 passos centralizados, número acima do texto */
   .step-list {
