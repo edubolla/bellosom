@@ -199,7 +199,7 @@ img, svg { max-width: 100%; display: block; }
 .hero {
   display: flex;
   align-items: center;
-  min-height: 60vh;
+  min-height: 80vh;
   background-image: linear-gradient(135deg, rgba(74, 32, 80, .92) 0%, rgba(74, 32, 80, .72) 45%, rgba(123, 49, 99, .45) 100%),
     url("../img/aparelhos/Rexton_BiCore-Rugged_man-blue-shirt_back_1600x1067.jpg");
   background-size: cover;
@@ -299,6 +299,9 @@ img, svg { max-width: 100%; display: block; }
 
 /* Passos "Como funciona" */
 .step-list { margin: 1.75rem auto 0; display: grid; gap: 1.4rem; max-width: 36rem; }
+
+/* CTA abaixo dos passos */
+.step-cta { margin-top: 2.5rem; text-align: center; }
 .step-list li { display: flex; gap: 1rem; align-items: flex-start; }
 .step-list__number {
   flex-shrink: 0;
@@ -376,15 +379,36 @@ img, svg { max-width: 100%; display: block; }
 .site-footer {
   background: var(--color-purple-main);
   color: var(--color-lilac-light);
-  padding: 2.5rem 0;
+  padding: 3rem 0 2rem;
 }
 .site-footer a { color: var(--color-white); }
-.site-footer__inner { display: grid; gap: 1.6rem; }
+.site-footer__inner {
+  display: grid;
+  gap: 2.5rem;
+}
 .site-footer__logo-img { height: 32px; width: auto; margin-bottom: .9rem; }
-.site-footer address { font-style: normal; line-height: 1.7; }
-.site-footer__social { display: flex; gap: 1rem; }
-.site-footer__legal { font-size: .75rem; opacity: .8; }
+.site-footer address { font-style: normal; line-height: 1.8; font-size: .88rem; }
+.site-footer__social { display: flex; gap: 1.25rem; margin-top: 1.25rem; font-size: .88rem; }
+.site-footer__legal { font-size: .75rem; opacity: .7; }
 .site-footer__legal p { margin: 0 0 .3em; }
+
+/* Sitemap */
+.site-footer__nav-title {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--color-lilac-medium);
+  margin: 0 0 .9rem;
+}
+.site-footer__sitemap ul { list-style: none; padding: 0; margin: 0; }
+.site-footer__sitemap li { margin-bottom: .5rem; }
+.site-footer__sitemap a {
+  color: var(--color-lilac-light);
+  font-size: .88rem;
+  text-decoration: none;
+  transition: color .15s;
+}
+.site-footer__sitemap a:hover { color: var(--color-white); }
 
 /* ---------- Botão flutuante WhatsApp ---------- */
 .whatsapp-float {
@@ -439,6 +463,9 @@ img, svg { max-width: 100%; display: block; }
   .hero__inner { grid-template-columns: 1.1fr 1fr; }
 
   .autoridade__inner { grid-template-columns: 1fr 1fr; }
+
+  /* Footer 3 colunas: info + sitemap + legal */
+  .site-footer__inner { grid-template-columns: 2fr 1fr 1fr; align-items: start; }
 
   /* Sintomas em duas colunas — bloco centralizado, mantendo o respiro */
   .symptom-list {
