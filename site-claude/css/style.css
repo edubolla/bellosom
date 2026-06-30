@@ -197,6 +197,9 @@ img, svg { max-width: 100%; display: block; }
 
 /* ---------- Hero ---------- */
 .hero {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
   background-image: linear-gradient(135deg, rgba(74, 32, 80, .92) 0%, rgba(74, 32, 80, .72) 45%, rgba(123, 49, 99, .45) 100%),
     url("../img/aparelhos/Rexton_BiCore-Rugged_man-blue-shirt_back_1600x1067.jpg");
   background-size: cover;
