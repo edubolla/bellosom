@@ -141,6 +141,19 @@ img, svg { max-width: 100%; display: block; }
   max-width: 560px;
 }
 
+/* Eixo central: títulos das seções autônomas alinhados ao centro.
+   Atinge apenas filhos diretos de .container — seções "split" (hero,
+   autoridade) têm o título aninhado e permanecem alinhados à esquerda. */
+.section > .container > h2,
+.section > .container > .section__label,
+.section > .container > .section__lead {
+  text-align: center;
+}
+.section > .container > .section__lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
@@ -190,11 +203,7 @@ img, svg { max-width: 100%; display: block; }
   background-position: 60% 28%;
   padding: clamp(3rem, 12vw, 6rem) 0;
 }
-.hero__inner {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
+.hero__content { max-width: 600px; }
 .hero h1 { color: var(--color-white); }
 .hero__subtitle { font-size: 1.05rem; color: var(--color-white); max-width: 32rem; }
 .hero .trust-line { color: var(--color-lilac-light); }
@@ -263,11 +272,14 @@ img, svg { max-width: 100%; display: block; }
   margin-top: 1.75rem;
 }
 .card-grid--testimonials {
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  grid-template-columns: 1fr;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Lista de sintomas — editorial, sem ícones */
-.symptom-list { margin-top: 1.5rem; max-width: 36rem; }
+.symptom-list { margin: 1.5rem auto 0; max-width: 36rem; }
 .symptom-list li {
   padding: .9rem 0;
   border-top: 1px solid var(--color-lilac-light);
@@ -283,7 +295,7 @@ img, svg { max-width: 100%; display: block; }
 .info-card p { margin: 0; color: var(--color-gray-medium); }
 
 /* Passos "Como funciona" */
-.step-list { margin-top: 1.75rem; display: grid; gap: 1.4rem; max-width: 36rem; }
+.step-list { margin: 1.75rem auto 0; display: grid; gap: 1.4rem; max-width: 36rem; }
 .step-list li { display: flex; gap: 1rem; align-items: flex-start; }
 .step-list__number {
   flex-shrink: 0;
@@ -301,14 +313,21 @@ img, svg { max-width: 100%; display: block; }
   border-top: 1px solid var(--color-lilac-medium);
   color: var(--color-purple-main);
 }
-.testimonial-card p { font-family: var(--font-heading); font-style: italic; margin-bottom: .6rem; }
+.testimonial-card p { font-family: var(--font-heading); font-style: italic; margin-bottom: .6rem; font-size: 1.05rem; }
 .testimonial-card cite { font-style: normal; font-size: .85rem; color: var(--color-gray-medium); }
 
 /* Layouts com mídia + conteúdo lado a lado */
 .autoridade__inner {
   display: grid;
-  gap: 2rem;
-  align-items: center;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+.autoridade__media { display: flex; }
+.autoridade__media .img-placeholder { width: 100%; }
+.autoridade__inner > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .autoridade__credential {
@@ -318,11 +337,12 @@ img, svg { max-width: 100%; display: block; }
 }
 
 /* Geo */
-.geo__address { margin: 1rem 0 1.5rem; color: var(--color-gray-medium); line-height: 1.8; font-style: normal; }
+.geo__address { margin: 1rem auto 1.5rem; color: var(--color-gray-medium); line-height: 1.8; font-style: normal; text-align: center; }
 .geo__address a { color: var(--color-purple-main); font-weight: 600; }
+.cta-group--inline { justify-content: center; }
 
 /* ---------- FAQ ---------- */
-.faq-list { margin-top: 1.5rem; display: grid; gap: 0; max-width: 40rem; }
+.faq-list { margin: 1.5rem auto 0; display: grid; gap: 0; max-width: 40rem; }
 .faq-item {
   border-top: 1px solid var(--color-lilac-medium);
   padding: 1rem 0;
@@ -417,22 +437,29 @@ img, svg { max-width: 100%; display: block; }
 
   .autoridade__inner { grid-template-columns: 1fr 1fr; }
 
-  /* Sintomas em duas colunas — aproveita a largura sem perder o respiro */
+  /* Sintomas em duas colunas — bloco centralizado, mantendo o respiro */
   .symptom-list {
-    max-width: none;
+    max-width: 760px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
   }
 
-  /* "Como funciona": 4 passos lado a lado, ocupando a largura total */
+  /* "Como funciona": 4 passos centralizados, número acima do texto */
   .step-list {
-    max-width: none;
+    max-width: 920px;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.25rem;
+    text-align: center;
   }
-  .step-list li { flex-direction: column; gap: .5rem; }
+  .step-list li { flex-direction: column; align-items: center; gap: .5rem; }
   .step-list__number { font-size: 1.6rem; }
+
+  /* Depoimentos em grade 2x2 equilibrada */
+  .card-grid--testimonials {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 2.5rem;
+  }
 
   /* Vitrine de produtos: 3 modelos lado a lado */
   .product-gallery {
