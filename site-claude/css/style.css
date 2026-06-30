@@ -370,6 +370,122 @@ img, svg { max-width: 100%; display: block; }
 .faq-item[open] summary::after { content: "–"; }
 .faq-item p { margin: .8rem 0 0; color: var(--color-gray-medium); }
 
+/* ---------- Seção "Sua Audição" — cards temáticos ---------- */
+.audicao-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.audicao-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-lilac-medium);
+  border-radius: var(--radius);
+  background: var(--color-white);
+  text-decoration: none;
+  color: var(--color-gray-dark);
+  transition: border-color .15s, box-shadow .15s;
+}
+.audicao-card:hover {
+  border-color: var(--color-purple-action);
+  box-shadow: 0 2px 12px rgba(74, 32, 80, .1);
+  color: var(--color-gray-dark);
+}
+.audicao-card__body { flex: 1; }
+.audicao-card__title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--color-purple-main);
+  margin: 0 0 .2rem;
+}
+.audicao-card__desc {
+  font-size: .82rem;
+  color: var(--color-gray-medium);
+  margin: 0;
+  line-height: 1.5;
+}
+.audicao-card__arrow {
+  flex-shrink: 0;
+  color: var(--color-purple-action);
+  font-size: 1.1rem;
+}
+
+/* ---------- Páginas internas de conteúdo ---------- */
+.content-hero {
+  background: var(--color-purple-main);
+  padding: clamp(2.5rem, 7vw, 4rem) 0;
+}
+.content-hero h1 {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: .5rem;
+}
+.content-hero__sub {
+  color: var(--color-lilac-light);
+  font-size: 1rem;
+  margin: 0;
+}
+.content-breadcrumb {
+  font-size: .78rem;
+  color: var(--color-lilac-medium);
+  margin: 0 0 1rem;
+}
+.content-breadcrumb a { color: var(--color-lilac-medium); }
+.content-breadcrumb a:hover { color: var(--color-white); }
+
+.content-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 4.5rem) 1.25rem;
+}
+.content-body h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  margin: 2rem 0 .75rem;
+  color: var(--color-purple-main);
+}
+.content-body h2:first-child { margin-top: 0; }
+.content-body p {
+  color: var(--color-gray-dark);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.content-body ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.content-body ul li {
+  color: var(--color-gray-dark);
+  line-height: 1.75;
+  margin-bottom: .3rem;
+}
+.content-cta-box {
+  background: var(--color-bg-soft);
+  border-left: 4px solid var(--color-purple-action);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.5rem 1.75rem;
+  margin: 2.5rem 0 0;
+}
+.content-cta-box p { margin-bottom: 1rem; font-weight: 600; color: var(--color-purple-main); }
+
+.content-nav {
+  border-top: 1px solid var(--color-lilac-light);
+  padding-top: 2rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.content-nav a {
+  font-size: .82rem;
+  color: var(--color-purple-action);
+  text-decoration: underline;
+}
+
 /* ---------- CTA final ---------- */
 .cta-final__inner { text-align: center; max-width: 38rem; margin: 0 auto; }
 .cta-final .cta-group { justify-content: center; }
@@ -463,6 +579,9 @@ img, svg { max-width: 100%; display: block; }
   .hero__inner { grid-template-columns: 1.1fr 1fr; }
 
   .autoridade__inner { grid-template-columns: 1fr 1fr; }
+
+  /* Cards "Sua Audição" em 2 colunas */
+  .audicao-grid { grid-template-columns: 1fr 1fr; }
 
   /* Footer 3 colunas: info + sitemap + legal */
   .site-footer__inner { grid-template-columns: 2fr 1fr 1fr; align-items: start; }
