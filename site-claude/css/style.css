@@ -186,11 +186,11 @@ img, svg { max-width: 100%; display: block; }
   color: var(--color-gray-medium);
 }
 .site-header__actions { display: flex; align-items: center; gap: 1rem; }
+.site-header__phones { display: none; flex-direction: column; line-height: 1.15; }
 .site-header__phone {
-  display: none;
   color: var(--color-purple-main);
-  font-weight: 600;
-  font-size: .9rem;
+  font-weight: 700;
+  font-size: 1.15rem;
   white-space: nowrap;
 }
 .site-header .btn { padding: .6rem 1.1rem; font-size: .72rem; }
@@ -200,7 +200,7 @@ img, svg { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   min-height: 80vh;
-  background-image: linear-gradient(135deg, rgba(74, 32, 80, .92) 0%, rgba(74, 32, 80, .72) 45%, rgba(123, 49, 99, .45) 100%),
+  background-image: linear-gradient(135deg, rgba(74, 32, 80, .78) 0%, rgba(74, 32, 80, .55) 45%, rgba(123, 49, 99, .28) 100%),
     url("../img/aparelhos/Rexton_BiCore-Rugged_man-blue-shirt_back_1600x1067.jpg");
   background-size: cover;
   background-position: 60% 28%;
@@ -239,33 +239,72 @@ img, svg { max-width: 100%; display: block; }
   letter-spacing: .18em;
   font-size: .72rem;
   color: var(--color-lilac-medium);
-  margin: 0 0 2rem;
+  margin: 0 0 .5rem;
+}
+.product-showcase__title {
+  text-align: center;
+  color: var(--color-white);
+  margin: 0 0 .5rem;
+}
+.product-showcase__lead {
+  text-align: center;
+  color: var(--color-lilac-light);
+  max-width: 42rem;
+  margin: 0 auto 2.25rem;
+}
+/* Imagem da linha completa: fundo preto puro, funde-se na faixa escura */
+.product-lineup {
+  margin: 0 auto 2.5rem;
+  max-width: 900px;
+  text-align: center;
+}
+.product-lineup img {
+  width: 100%;
+  height: auto;
 }
 .product-gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 760px;
+  gap: 1.5rem;
+  max-width: 900px;
   margin: 0 auto;
 }
 .product-card {
   margin: 0;
   text-align: center;
 }
-/* As imagens têm fundo preto puro: fundem-se na faixa criando efeito "flutuante" */
+/* Fotos de estúdio (fundo claro): apresentadas como tiles brancos sobre a faixa escura */
 .product-card img {
   width: 100%;
-  max-width: 280px;
   height: auto;
-  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius);
 }
 .product-card figcaption {
-  margin-top: .4rem;
-  font-size: .78rem;
+  margin-top: .7rem;
+  font-size: .82rem;
   font-weight: 600;
   color: var(--color-lilac-light);
   letter-spacing: .03em;
 }
+
+/* ---------- Faixa lifestyle (uso no dia a dia) ---------- */
+.lifestyle-band { padding: clamp(2.5rem, 7vw, 4.5rem) 0; background: var(--color-white); }
+.lifestyle-band__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+.lifestyle-band__media { margin: 0; }
+.lifestyle-band__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+.lifestyle-band__text h2 { margin-bottom: .75rem; }
+.lifestyle-band__text p { color: var(--color-gray-dark); margin-bottom: 1.5rem; }
 
 /* ---------- Cards genéricos em grid ---------- */
 .card-grid {
@@ -573,7 +612,7 @@ img, svg { max-width: 100%; display: block; }
 }
 
 @media (min-width: 768px) {
-  .site-header__phone { display: inline-block; }
+  .site-header__phones { display: flex; }
   .site-header .btn { padding: .8rem 1.6rem; font-size: .8rem; }
 
   .hero__inner { grid-template-columns: 1.1fr 1fr; }
@@ -619,6 +658,9 @@ img, svg { max-width: 100%; display: block; }
   .product-gallery {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    max-width: var(--container-width);
+    max-width: 900px;
   }
+
+  /* Faixa lifestyle: imagem + texto lado a lado */
+  .lifestyle-band__inner { grid-template-columns: 1.1fr 1fr; gap: 3rem; }
 }
