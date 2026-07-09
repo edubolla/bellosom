@@ -228,9 +228,9 @@ img, svg { max-width: 100%; display: block; }
   justify-content: center;
 }
 
-/* ---------- Vitrine de produtos (faixa full-width escura) ---------- */
+/* ---------- Vitrine de produtos (faixa full-width clara) ---------- */
 .product-showcase {
-  background: #100610;
+  background: var(--color-white);
   padding: clamp(2.75rem, 7vw, 4.5rem) 0;
 }
 .product-showcase__label {
@@ -238,21 +238,21 @@ img, svg { max-width: 100%; display: block; }
   text-transform: uppercase;
   letter-spacing: .18em;
   font-size: .72rem;
-  color: var(--color-lilac-medium);
+  color: var(--color-purple-action);
   margin: 0 0 .5rem;
 }
 .product-showcase__title {
   text-align: center;
-  color: var(--color-white);
+  color: var(--color-purple-main);
   margin: 0 0 .5rem;
 }
 .product-showcase__lead {
   text-align: center;
-  color: var(--color-lilac-light);
+  color: var(--color-gray-dark);
   max-width: 42rem;
   margin: 0 auto 2.25rem;
 }
-/* Imagem da linha completa: fundo preto puro, funde-se na faixa escura */
+/* Imagem da linha completa (fundo branco) */
 .product-lineup {
   margin: 0 auto 2.5rem;
   max-width: 900px;
@@ -273,18 +273,19 @@ img, svg { max-width: 100%; display: block; }
   margin: 0;
   text-align: center;
 }
-/* Fotos de estúdio (fundo claro): apresentadas como tiles brancos sobre a faixa escura */
+/* Fotos de estúdio apresentadas como tiles brancos com borda sutil */
 .product-card img {
   width: 100%;
   height: auto;
   background: var(--color-white);
+  border: 1px solid var(--color-lilac-light);
   border-radius: var(--radius);
 }
 .product-card figcaption {
   margin-top: .7rem;
   font-size: .82rem;
   font-weight: 600;
-  color: var(--color-lilac-light);
+  color: var(--color-purple-main);
   letter-spacing: .03em;
 }
 
